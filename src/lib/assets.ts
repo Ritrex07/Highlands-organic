@@ -1,3 +1,3 @@
-import logoAssetJson from "@/assets/hoc-logo.jpg.asset.json";
+import { siteImages } from "@/lib/site-images";
 
-export const logoUrl: string = logoAssetJson.url;
+export const logoUrl: string = siteImages.logo;

@@ -1,12 +1,3 @@
-import avocadosAsset from "@/assets/hoc-avocados.jpg.asset.json";
-import avocadoTreeAsset from "@/assets/hoc-avocado-tree.jpg.asset.json";
-import avocadoBoxesAsset from "@/assets/hoc-avocado-boxes.jpg.asset.json";
-import honeyAsset from "@/assets/hoc-honey.jpg.asset.json";
-import honeyBucketAsset from "@/assets/hoc-honey-bucket.jpg.asset.json";
-import chilliesAsset from "@/assets/hoc-chillies.jpg.asset.json";
-import chilliFieldAsset from "@/assets/hoc-chilli-field.jpg.asset.json";
-import chilliHarvestAsset from "@/assets/hoc-chilli-harvest.jpg.asset.json";
-import packhouseAsset from "@/assets/hoc-hero-packhouse.jpg.asset.json";
 import hassAvocadoImage from "@/assets/product-images/hass-avocado.jpg";
 import fuerteAvocadoImage from "@/assets/product-images/fuerte-avocado.jpg";
 import localAvocadoImage from "@/assets/product-images/local-avocado.jpg";
@@ -17,6 +8,7 @@ import ajiEscabecheImage from "@/assets/product-images/aji-escabeche.jpg";
 import demonImage from "@/assets/product-images/demon.jpg";
 import habaneroRedImage from "@/assets/product-images/habanero-red.jpg";
 import { newImages } from "@/lib/new-images";
+import { siteImages } from "@/lib/site-images";
 
 export type CategoryId = "avocados" | "honey" | "chillies";
 
@@ -67,9 +59,9 @@ export const products: Product[] = [
         src: hassAvocadoImage,
         alt: "Harvested Hass avocados in a crate",
       },
-      { src: avocadoTreeAsset.url, alt: "Avocados ripening on the tree" },
+      { src: siteImages.avocadoTreeLegacy, alt: "Avocados ripening on the tree" },
       {
-        src: avocadoBoxesAsset.url,
+        src: siteImages.exportPallets,
         alt: "Branded HOC avocado boxes ready for export",
       },
       { src: newImages.avocadoTree, alt: "Avocados growing on a partner farm tree" },
@@ -94,7 +86,7 @@ export const products: Product[] = [
         src: fuerteAvocadoImage,
         alt: "Fuerte avocados on the tree",
       },
-      { src: avocadosAsset.url, alt: "Graded avocados at the packhouse" },
+      { src: siteImages.avocados, alt: "Graded avocados at the packhouse" },
       { src: newImages.farmerTeam, alt: "HOC farmers and partners in an avocado orchard" },
     ],
     quantity: true,
@@ -117,7 +109,7 @@ export const products: Product[] = [
         alt: "Packed HOC avocado boxes",
       },
       {
-        src: packhouseAsset.url,
+        src: siteImages.packhouse,
         alt: "Avocados being weighed at the HOC packhouse",
       },
     ],
@@ -140,7 +132,7 @@ export const products: Product[] = [
         src: organicHoneyImage,
         alt: "Organic honey in a glass jar",
       },
-      { src: honeyBucketAsset.url, alt: "A bucket of HOC honey from Njombe" },
+      { src: siteImages.honeyBucket, alt: "A bucket of HOC honey from Njombe" },
       { src: newImages.honeyBuckets, alt: "HOC honey buckets prepared for market" },
       { src: newImages.stinglessBeeHoney, alt: "HOC Stingless Bee Honey container" },
     ],
@@ -160,7 +152,7 @@ export const products: Product[] = [
     alt: "Freshly picked HOC chillies in a basket",
     gallery: [
       { src: ajiLimoImage, alt: "Freshly picked chillies" },
-      { src: chilliFieldAsset.url, alt: "HOC chilli field" },
+      { src: siteImages.chilliField, alt: "HOC chilli field" },
       { src: newImages.chilliSauce, alt: "HOC Pilpili Mbuz chilli sauce bottles" },
     ],
     quantity: true,
@@ -182,7 +174,7 @@ export const products: Product[] = [
         src: ajiAmarilloImage,
         alt: "Chilli plants in the field",
       },
-      { src: chilliesAsset.url, alt: "Harvested chillies" },
+      { src: siteImages.chillies, alt: "Harvested chillies" },
       { src: newImages.brandedUniform, alt: "Highlands Organic branded field uniform" },
     ],
     quantity: true,
@@ -204,7 +196,7 @@ export const products: Product[] = [
         src: ajiEscabecheImage,
         alt: "Chilli harvest in the hands of a farmer",
       },
-      { src: chilliFieldAsset.url, alt: "Chilli field at HOC" },
+      { src: siteImages.chilliField, alt: "Chilli field at HOC" },
       { src: newImages.chilliSauce, alt: "Highlands Organic chilli sauce" },
     ],
     quantity: true,
@@ -223,7 +215,7 @@ export const products: Product[] = [
     alt: "Red and yellow HOC chillies after harvest",
     gallery: [
       { src: demonImage, alt: "Demon chillies on the plant" },
-      { src: chilliHarvestAsset.url, alt: "Hand-picked chillies" },
+      { src: siteImages.chillies, alt: "Hand-picked chillies" },
       { src: newImages.brandedUniform, alt: "Highlands Organic branded field uniform" },
     ],
     quantity: true,
@@ -243,7 +235,7 @@ export const products: Product[] = [
     gallery: [
       { src: habaneroRedImage, alt: "Red habanero chillies" },
       {
-        src: chilliFieldAsset.url,
+        src: siteImages.chilliField,
         alt: "Chilli plants growing in the highlands",
       },
     ],

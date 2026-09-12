@@ -4,11 +4,8 @@ import { ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { AnimatedMarqueeHero } from "@/components/AnimatedMarqueeHero";
-import heroAsset from "@/assets/hoc-hero-packhouse.jpg.asset.json";
-import avocadosAsset from "@/assets/hoc-avocados.jpg.asset.json";
-import honeyAsset from "@/assets/hoc-honey.jpg.asset.json";
-import chilliesAsset from "@/assets/hoc-chillies.jpg.asset.json";
 import { newImages } from "@/lib/new-images";
+import { siteImages } from "@/lib/site-images";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,7 +41,7 @@ const products = [
     varieties: "Hass · Fuerte · Local",
     description:
       "Organically grown at highland altitude, hand-picked and carefully graded for export.",
-    image: avocadosAsset.url,
+    image: siteImages.avocados,
     alt: "Freshly harvested Hass avocados in a wooden crate at the HOC packhouse",
     href: "#avocados",
   },
@@ -53,7 +50,7 @@ const products = [
     varieties: "Organic Honey",
     description:
       "Pure, certified-organic honey harvested from the forests of the southern highlands.",
-    image: honeyAsset.url,
+    image: siteImages.honey,
     alt: "Golden organic HOC honey being drizzled into a glass jar",
     href: "#honey",
   },
@@ -62,7 +59,7 @@ const products = [
     varieties: "Aji Limo · Aji Amarillo · Aji Escabeche · Demon · Habanero Red",
     description:
       "A spectrum of premium chillies, grown to specification for fresh and processing markets.",
-    image: chilliesAsset.url,
+    image: siteImages.chillies,
     alt: "A basket of freshly picked red and yellow HOC chillies in the field",
     href: "#chillies",
   },
@@ -216,7 +213,7 @@ function Index() {
               </div>
               <div className="overflow-hidden rounded-[1.75rem] border border-border/70 bg-card p-2 shadow-sm">
                 <img
-                  src={heroAsset.url}
+                      src={siteImages.packhouse}
                   alt="Freshly harvested avocados being weighed at the Highlands Organic packhouse"
                   loading="lazy"
                   className="aspect-[4/3] w-full rounded-[1.25rem] object-cover"

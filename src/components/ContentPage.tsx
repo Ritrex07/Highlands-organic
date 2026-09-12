@@ -4,13 +4,8 @@ import { ArrowRight, Check, ChevronRight, Leaf, Sprout, Users } from "lucide-rea
 
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
-import approachImage from "@/assets/hoc-field-hillside.jpg.asset.json";
-import packhouseImage from "@/assets/hoc-hero-packhouse.jpg.asset.json";
-import exportImage from "@/assets/hoc-export-pallets.jpg.asset.json";
-import avocadoImage from "@/assets/hoc-avocados.jpg.asset.json";
-import honeyImage from "@/assets/hoc-honey.jpg.asset.json";
-import chilliImage from "@/assets/hoc-chillies.jpg.asset.json";
 import { newImages } from "@/lib/new-images";
+import { siteImages } from "@/lib/site-images";
 
 function Breadcrumb({ current }: { current: string }) {
   return (
@@ -56,10 +51,10 @@ function SplitSection({ eyebrow, title, children, image, imageAlt, reverse = fal
 export function OurApproachPage() {
   return <div className="min-h-screen bg-background"><Navbar /><main>
     <Hero title="Our Approach" intro="We bring together farmer partnerships, careful production and responsible practices to grow agricultural products people can trust." image={newImages.farmerTeam} current="Our Approach" />
-    <SplitSection eyebrow="Farmer partnerships" title="Partnerships that begin in the field." image={approachImage.url} imageAlt="A hillside farm in Tanzania's southern highlands">
+    <SplitSection eyebrow="Farmer partnerships" title="Partnerships that begin in the field." image={siteImages.fieldHillside} imageAlt="A hillside farm in Tanzania's southern highlands">
       <p>HOC works with smallholder farmers across Tanzania's southern highlands to improve production and support the people who grow our products.</p><p>We believe long-term relationships create better outcomes for farmers, the land and the customers who rely on our produce.</p>
     </SplitSection>
-    <SplitSection eyebrow="Quality & production" title="A better harvest is built step by step." image={packhouseImage.url} imageAlt="Produce being handled at the HOC packhouse" reverse>
+    <SplitSection eyebrow="Quality & production" title="A better harvest is built step by step." image={siteImages.packhouse} imageAlt="Produce being handled at the HOC packhouse" reverse>
       <p>Our approach connects what happens in the field with careful handling and continuous improvement through the production process.</p><p>From growing to grading, we focus on consistent quality and products that reflect their origin.</p>
     </SplitSection>
     <section className="bg-secondary/50"><div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8"><div className="max-w-2xl"><p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Support & knowledge</p><h2 className="mt-4 font-display text-3xl font-semibold sm:text-4xl">Knowledge that keeps improving the next harvest.</h2><p className="mt-5 text-base leading-relaxed text-muted-foreground">HOC's documented approach includes farmer support, extension and technical assistance, feedback and learning. These practical conversations help turn experience into stronger production over time.</p></div><div className="mt-12 grid gap-4 sm:grid-cols-3">{[[Sprout,"Production support"],[Users,"Farmer relationships"],[Leaf,"Responsible practice"]].map(([Icon, label]) => <div key={String(label)} className="border-t-2 border-primary/20 pt-5"><Icon className="h-6 w-6 text-primary" /><h3 className="mt-4 font-display text-xl font-semibold">{String(label)}</h3></div>)}</div></div></section>
@@ -72,7 +67,7 @@ export function ExportPage() {
   return <div className="min-h-screen bg-background"><Navbar /><main>
     <Hero title="From Tanzania's Highlands to the World" intro="We connect agricultural products from Tanzania's southern highlands with customers looking for quality, care and a clear relationship to origin." image={newImages.avocadoHarvest} current="Export" />
     <section className="border-b border-border bg-background"><div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8"><div className="max-w-2xl"><p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Products for markets</p><h2 className="mt-4 font-display text-3xl font-semibold sm:text-4xl">Products with a sense of place.</h2></div><div className="mt-12 grid gap-5 md:grid-cols-3">{products.map(([image, name, description]) => <article key={name} className="group overflow-hidden rounded-2xl border border-border bg-card"><img src={image} alt="" loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105" /><div className="p-6"><h3 className="font-display text-2xl font-semibold">{name}</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p></div></article>)}</div></div></section>
-    <SplitSection eyebrow="Quality" title="Care in every stage of production." image={packhouseImage.url} imageAlt="Produce prepared at the HOC packhouse"><p>HOC focuses on quality agricultural production, from the work done with farmer partners through to careful handling of the finished product.</p><p>Product requirements can be discussed with customers depending on their needs.</p></SplitSection>
+    <SplitSection eyebrow="Quality" title="Care in every stage of production." image={siteImages.packhouse} imageAlt="Produce prepared at the HOC packhouse"><p>HOC focuses on quality agricultural production, from the work done with farmer partners through to careful handling of the finished product.</p><p>Product requirements can be discussed with customers depending on their needs.</p></SplitSection>
     <section className="bg-secondary/50"><div className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 sm:py-28 lg:grid-cols-2 lg:px-8"><div><p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Farmer network</p><h2 className="mt-4 font-display text-3xl font-semibold sm:text-4xl">The network behind every product.</h2></div><p className="text-base leading-relaxed text-muted-foreground">Our farmer partnerships are central to sourcing agricultural products responsibly. By working with growers and supporting better production, HOC builds a supply relationship grounded in the field.</p></div></section>
     <section className="bg-primary text-primary-foreground"><div className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 sm:py-28 lg:px-8"><p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary-foreground/60">Business enquiry</p><h2 className="mx-auto mt-4 max-w-3xl font-display text-3xl font-semibold sm:text-5xl">Looking for agricultural products from Tanzania?</h2><div className="mt-8 flex flex-wrap justify-center gap-3"><Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground">Request a Quote <ArrowRight className="h-4 w-4" /></Link><Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/40 px-6 py-3 text-sm font-semibold">Contact Us</Link></div></div></section>
   </main><Footer /></div>;

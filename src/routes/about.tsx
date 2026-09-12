@@ -3,18 +3,8 @@ import { ArrowRight, ChevronRight, Leaf, Sprout, Sun } from "lucide-react";
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import fieldAsset from "@/assets/hoc-field-hillside.jpg.asset.json";
-import avocadoTreeAsset from "@/assets/hoc-avocado-tree.jpg.asset.json";
-import chilliHarvestAsset from "@/assets/hoc-chilli-harvest.jpg.asset.json";
-import chilliFieldAsset from "@/assets/hoc-chilli-field.jpg.asset.json";
-import honeyBucketAsset from "@/assets/hoc-honey-bucket.jpg.asset.json";
-import heroAsset from "@/assets/hoc-hero-packhouse.jpg.asset.json";
-import exportPalletsAsset from "@/assets/hoc-export-pallets.jpg.asset.json";
-import avocadoBoxesAsset from "@/assets/hoc-avocado-boxes.jpg.asset.json";
-import avocadosAsset from "@/assets/hoc-avocados.jpg.asset.json";
-import honeyAsset from "@/assets/hoc-honey.jpg.asset.json";
-import chilliesAsset from "@/assets/hoc-chillies.jpg.asset.json";
 import { newImages } from "@/lib/new-images";
+import { siteImages } from "@/lib/site-images";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -66,47 +56,47 @@ const milestones = [
 
 const gallery = [
   {
-    src: avocadoTreeAsset.url,
+    src: siteImages.avocadoTreeLegacy,
     alt: "Hass avocados ripening on the tree at an HOC partner farm",
     label: "On the farm",
   },
   {
-    src: heroAsset.url,
+    src: siteImages.packhouse,
     alt: "Weighing freshly harvested avocados at the HOC packhouse",
     label: "At the packhouse",
   },
   {
-    src: honeyBucketAsset.url,
+    src: siteImages.honeyBucket,
     alt: "HOC Stinging Bee Honey from forest farming in Njombe, packed for export",
     label: "Njombe forest honey",
   },
   {
-    src: chilliFieldAsset.url,
+    src: siteImages.chilliField,
     alt: "Red chillies ripening in an HOC field",
     label: "Chilli harvest",
   },
   {
-    src: avocadosAsset.url,
+    src: siteImages.avocados,
     alt: "Freshly harvested HOC avocados in a wooden crate",
     label: "Export-grade avocados",
   },
   {
-    src: honeyAsset.url,
+    src: siteImages.honey,
     alt: "Golden organic HOC honey being drizzled into a jar",
     label: "Pure organic honey",
   },
   {
-    src: chilliesAsset.url,
+    src: siteImages.chillies,
     alt: "A basket of freshly picked red and yellow HOC chillies",
     label: "Premium chillies",
   },
   {
-    src: avocadoBoxesAsset.url,
+    src: siteImages.exportPallets,
     alt: "Branded Highlands Organic avocado boxes ready for shipment",
     label: "Packed for market",
   },
   {
-    src: exportPalletsAsset.url,
+    src: siteImages.exportPallets,
     alt: "Pallets of HOC produce prepared for export",
     label: "Ready for export",
   },
@@ -263,7 +253,7 @@ function AboutPage() {
               <div className="space-y-6 lg:sticky lg:top-24">
                 <div className="overflow-hidden rounded-2xl border border-border">
                   <img
-                    src={avocadoTreeAsset.url}
+                    src={siteImages.avocadoTreeLegacy}
                     alt="Hass avocados growing on the tree at an HOC partner farm"
                     loading="lazy"
                     className="aspect-[4/3] w-full object-cover"
@@ -271,7 +261,7 @@ function AboutPage() {
                 </div>
                 <div className="overflow-hidden rounded-2xl border border-border">
                   <img
-                    src={chilliFieldAsset.url}
+                    src={siteImages.chilliField}
                     alt="Red chillies ripening in a Highlands Organic field"
                     loading="lazy"
                     className="aspect-[4/3] w-full object-cover"
@@ -333,7 +323,7 @@ function AboutPage() {
             <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
               <div className="order-2 overflow-hidden rounded-2xl border border-border lg:order-1">
                 <img
-                  src={fieldAsset.url}
+                  src={siteImages.fieldHillside}
                   alt="Lush green chilli fields on a hillside farm in Tanzania's southern highlands"
                   loading="lazy"
                   className="aspect-[4/3] w-full object-cover"
@@ -404,7 +394,7 @@ function AboutPage() {
               </div>
               <div className="overflow-hidden rounded-2xl border border-border">
                 <img
-                  src={honeyBucketAsset.url}
+                  src={siteImages.honeyBucket}
                   alt="HOC forest honey from Njombe, harvested through responsible forest farming"
                   loading="lazy"
                   className="aspect-[4/3] w-full object-cover"
