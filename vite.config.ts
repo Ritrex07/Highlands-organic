@@ -13,6 +13,12 @@ export default defineConfig({
   vite: {
     publicDir: "Public",
   },
+  // Vercel needs Nitro's native output manifest so SSR routes and public
+  // images are deployed together. The previous default emitted Cloudflare
+  // output, which can leave static assets unavailable on Vercel.
+  nitro: {
+    preset: "vercel",
+  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
