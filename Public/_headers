@@ -1,0 +1,11 @@
+/*
+  Baseline headers for static hosting (Cloudflare Pages/Nitro assets).
+  Keep these aligned with the headers applied by src/server.ts.
+*/
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
