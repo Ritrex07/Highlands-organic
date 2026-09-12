@@ -1,5 +1,5 @@
 const imagePath = (filename: string) =>
-  `/HO%20PROFILE.pdf-images/${filename}`;
+  `/images/${filename}`;
 
 export const newImages = {
   exportBoxes: imagePath("IMG-20260911-WA0002.jpg"),
