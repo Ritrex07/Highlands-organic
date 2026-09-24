@@ -10,7 +10,6 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { logoUrl } from "../lib/assets";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -103,7 +102,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           rel: "stylesheet",
           href: appCss,
         },
-        { rel: "icon", href: logoUrl, type: "image/png" },
+        { rel: "icon", href: "/favicon/favicon.svg", type: "image/svg+xml" },
+        { rel: "icon", href: "/favicon/favicon.ico" },
+        {
+          rel: "icon",
+          href: "/favicon/favicon-96x96.png",
+          type: "image/png",
+          sizes: "96x96",
+        },
+        {
+          rel: "apple-touch-icon",
+          href: "/favicon/apple-touch-icon.png",
+        },
+        { rel: "manifest", href: "/favicon/site.webmanifest" },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         {
           rel: "preconnect",

@@ -1,9 +1,8 @@
 import { PhoneCall } from "lucide-react";
 
-const whatsappNumber = (import.meta.env.VITE_WHATSAPP_NUMBER ?? "").replace(
-  /\D/g,
-  "",
-);
+const whatsappNumber = (
+  import.meta.env.VITE_WHATSAPP_NUMBER || "255754341236"
+).replace(/\D/g, "");
 const message = encodeURIComponent(
   "Hello Highlands Organic, I would like to enquire about your products.",
 );

@@ -77,12 +77,6 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Highlands Organic Co. Ltd. All
             rights reserved.
           </p>
-          <a
-            href="/contact"
-            className="text-xs font-semibold text-primary-foreground/80 transition-colors hover:text-primary-foreground"
-          >
-            Contact Us
-          </a>
         </div>
       </div>
     </footer>

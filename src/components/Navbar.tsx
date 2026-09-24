@@ -1,5 +1,6 @@
 import { useEffect, useState, type CSSProperties } from "react";
 import { Menu, ShoppingBasket, X } from "lucide-react";
+import { useLocation } from "@tanstack/react-router";
 
 import { logoUrl } from "@/lib/assets";
 import { getProduct } from "@/lib/products";
@@ -46,6 +47,7 @@ const topLinks = [
 ];
 
 export function Navbar() {
+  const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openSection, setOpenSection] = useState<string | null>(null);
   const [addedProduct, setAddedProduct] = useState<{
@@ -143,7 +145,10 @@ export function Navbar() {
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
             {/* About dropdown */}
             <div className="relative">
-              <a href="/about" className="rounded-full px-4 py-2 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground">
+              <a
+                href="/about"
+                className="rounded-full px-4 py-2 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              >
                 About
               </a>
               <div className="hidden absolute left-0 top-full w-56">
@@ -163,7 +168,10 @@ export function Navbar() {
 
             {/* Products mega-menu */}
             <div className="relative">
-              <a href="/products" className="rounded-full px-4 py-2 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground">
+              <a
+                href="/products"
+                className="rounded-full px-4 py-2 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              >
                 Products
               </a>
               <div className="hidden absolute left-1/2 top-full w-[32rem] -translate-x-1/2">
@@ -203,7 +211,10 @@ export function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="rounded-full px-4 py-2 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                aria-current={
+                  location.pathname === link.href ? "page" : undefined
+                }
+                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground ${location.pathname === link.href ? "bg-primary-foreground/15 text-primary-foreground" : "text-primary-foreground/80"}`}
               >
                 {link.label}
               </a>
@@ -346,7 +357,10 @@ export function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="block rounded-lg px-3 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
+                aria-current={
+                  location.pathname === link.href ? "page" : undefined
+                }
+                className={`block rounded-lg px-3 py-3 text-sm font-semibold transition-colors hover:bg-secondary ${location.pathname === link.href ? "bg-secondary text-foreground" : "text-foreground"}`}
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
