@@ -9,37 +9,6 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 const ORDER_ADDED_EVENT = "hoc-order-added";
 
-const aboutLinks = [
-  { label: "Our Story", href: "/about#story" },
-  { label: "Mission & Vision", href: "/about#mission" },
-  { label: "Farmers", href: "/about#farmers" },
-  { label: "Sustainability", href: "/about#sustainability" },
-  { label: "Stories", href: "/about#stories" },
-];
-
-const productLinks = [
-  {
-    label: "Avocados",
-    description: "Hass, Fuerte and local varieties, organically grown.",
-    href: "/products#avocados",
-  },
-  {
-    label: "Honey",
-    description: "Certified organic stinging-bee honey from Njombe forests.",
-    href: "/products#honey",
-  },
-  {
-    label: "Chillies",
-    description: "Aji limo, habanero and more — grown to your specification.",
-    href: "/products#chillies",
-  },
-];
-
-const productActions = [
-  { label: "Order Products", href: "/products#order" },
-  { label: "Request a Quote", href: "/#quote" },
-];
-
 const topLinks = [
   { label: "Our Approach", href: "/our-approach" },
   { label: "Export", href: "/export" },
@@ -49,7 +18,6 @@ const topLinks = [
 export function Navbar() {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [openSection, setOpenSection] = useState<string | null>(null);
   const [addedProduct, setAddedProduct] = useState<{
     name: string;
     image: string;
@@ -117,9 +85,6 @@ export function Navbar() {
     };
   }, []);
 
-  const toggleSection = (section: string) =>
-    setOpenSection((current) => (current === section ? null : section));
-
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 lg:px-8">
       <div className="mx-auto max-w-7xl rounded-full border border-primary-foreground/10 bg-primary/95 text-primary-foreground shadow-lg shadow-primary/10 backdrop-blur-md">
@@ -143,69 +108,18 @@ export function Navbar() {
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
-            {/* About dropdown */}
-            <div className="relative">
-              <a
-                href="/about"
-                className="rounded-full px-4 py-2 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
-              >
-                About
-              </a>
-              <div className="hidden absolute left-0 top-full w-56">
-                <div className="overflow-hidden rounded-xl border border-border bg-popover p-1.5 shadow-lg shadow-primary/5">
-                  {aboutLinks.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      className="block rounded-lg px-3.5 py-2.5 text-sm text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Products mega-menu */}
-            <div className="relative">
-              <a
-                href="/products"
-                className="rounded-full px-4 py-2 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
-              >
-                Products
-              </a>
-              <div className="hidden absolute left-1/2 top-full w-[32rem] -translate-x-1/2">
-                <div className="overflow-hidden rounded-xl border border-border bg-popover p-2 shadow-lg shadow-primary/5">
-                  <div className="grid gap-1 sm:grid-cols-3">
-                    {productLinks.map((link) => (
-                      <a
-                        key={link.label}
-                        href={link.href}
-                        className="rounded-lg p-3.5 transition-colors hover:bg-secondary"
-                      >
-                        <span className="block text-sm font-semibold text-foreground">
-                          {link.label}
-                        </span>
-                        <span className="mt-1 block text-xs leading-relaxed text-muted-foreground">
-                          {link.description}
-                        </span>
-                      </a>
-                    ))}
-                  </div>
-                  <div className="mt-2 flex items-center gap-2 border-t border-border px-2 pb-1 pt-3">
-                    {productActions.map((action) => (
-                      <a
-                        key={action.label}
-                        href={action.href}
-                        className="rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-                      >
-                        {action.label}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+            <a
+              href="/about"
+              className="rounded-full px-4 py-2 text-sm font-medium text-primary-foreground/80 transition-all hover:bg-accent hover:text-accent-foreground hover:shadow-md focus-visible:bg-accent focus-visible:text-accent-foreground"
+            >
+              About
+            </a>
+            <a
+              href="/products"
+              className="rounded-full px-4 py-2 text-sm font-medium text-primary-foreground/80 transition-all hover:bg-accent hover:text-accent-foreground hover:shadow-md focus-visible:bg-accent focus-visible:text-accent-foreground"
+            >
+              Products
+            </a>
 
             {topLinks.map((link) => (
               <a
@@ -307,7 +221,6 @@ export function Navbar() {
             className="mx-auto max-w-7xl space-y-1 px-4 py-4 sm:px-6"
             aria-label="Mobile"
           >
-            {/* About section */}
             <a
               href="/about"
               className="block w-full rounded-lg px-3 py-3 text-left text-sm font-semibold text-foreground"
@@ -315,22 +228,6 @@ export function Navbar() {
             >
               About
             </a>
-            {openSection === "about" && (
-              <div className="space-y-1 pb-2 pl-3">
-                {aboutLinks.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="block rounded-lg px-3 py-2.5 text-sm text-foreground/75 transition-colors hover:bg-secondary"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-            )}
-
-            {/* Products section */}
             <a
               href="/products"
               className="block w-full rounded-lg px-3 py-3 text-left text-sm font-semibold text-foreground"
@@ -338,21 +235,6 @@ export function Navbar() {
             >
               Products
             </a>
-            {openSection === "products" && (
-              <div className="space-y-1 pb-2 pl-3">
-                {[...productLinks, ...productActions].map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="block rounded-lg px-3 py-2.5 text-sm text-foreground/75 transition-colors hover:bg-secondary"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-            )}
-
             {topLinks.map((link) => (
               <a
                 key={link.label}

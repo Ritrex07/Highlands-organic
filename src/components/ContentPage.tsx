@@ -219,17 +219,17 @@ export function OurApproachPage() {
 export function ExportPage() {
   const products = [
     [
-      avocadoImage.url,
+      siteImages.avocados,
       "Avocados",
       "Highland-grown avocados, handled with care from partner farms.",
     ],
     [
-      honeyImage.url,
+      siteImages.honey,
       "Honey",
       "Organic honey harvested from the forests of the southern highlands.",
     ],
     [
-      chilliImage.url,
+      siteImages.chillies,
       "Chillies",
       "Premium chillies grown to specification for fresh and processing markets.",
     ],
@@ -507,10 +507,10 @@ export function ContactPage() {
       icon: Mail,
       content: (
         <a
-          href="mailto:info@highlandsorganic.co.tz"
+          href="mailto:highlandsorganic@gmail.com"
           className="transition-colors hover:text-primary"
         >
-          info@highlandsorganic.co.tz
+          highlandsorganic@gmail.com
         </a>
       ),
     },
@@ -531,7 +531,7 @@ export function ContactPage() {
   const socialLinks = [
     {
       label: "Instagram",
-      href: "https://www.instagram.com/",
+      href: "https://www.instagram.com/highlands.organic?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==",
       icon: Instagram,
       color: "text-[#E4405F]",
       hover: "hover:bg-[#E4405F]",

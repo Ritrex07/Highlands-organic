@@ -13,6 +13,7 @@ import {
   type CategoryId,
 } from "@/lib/products";
 import productHeroImage from "@/assets/product-hero-tanzania.png";
+import { CurrencySelector } from "@/lib/use-currency";
 
 export const Route = createFileRoute("/products/")({
   head: () => ({
@@ -91,26 +92,29 @@ function ProductsPage() {
             <div
               role="tablist"
               aria-label="Product categories"
-              className="flex flex-wrap gap-2 overflow-x-auto"
+              className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"
             >
-              {categories.map((category) => {
-                const isActive = active === category.id;
-                return (
-                  <button
-                    key={category.id}
-                    role="tab"
-                    aria-selected={isActive}
-                    onClick={() => setActive(category.id)}
-                    className={`relative rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 ${
-                      isActive
-                        ? "bg-primary text-primary-foreground"
-                        : "border border-border text-foreground/70 hover:border-primary/40 hover:text-foreground"
-                    }`}
-                  >
-                    {category.label}
-                  </button>
-                );
-              })}
+              <div className="flex flex-wrap gap-2 overflow-x-auto">
+                {categories.map((category) => {
+                  const isActive = active === category.id;
+                  return (
+                    <button
+                      key={category.id}
+                      role="tab"
+                      aria-selected={isActive}
+                      onClick={() => setActive(category.id)}
+                      className={`relative rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 ${
+                        isActive
+                          ? "bg-primary text-primary-foreground"
+                          : "border border-border text-foreground/70 hover:border-primary/40 hover:text-foreground"
+                      }`}
+                    >
+                      {category.label}
+                    </button>
+                  );
+                })}
+              </div>
+              <CurrencySelector />
             </div>
 
             <div

@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { ProductCard } from "@/components/ProductCard";
 import { getProduct, getProductPricing, products } from "@/lib/products";
 import { useOrderList } from "@/lib/use-order-list";
+import { useCurrency } from "@/lib/use-currency";
 
 export const Route = createFileRoute("/products/$slug")({
   loader: ({ params }) => {
@@ -66,6 +67,7 @@ function ProductDetail() {
   const [activeImage, setActiveImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const { add, has } = useOrderList();
+  const { formatPrice } = useCurrency();
 
   const related = products
     .filter((p) => p.category === product.category && p.slug !== product.slug)
@@ -151,7 +153,7 @@ function ProductDetail() {
                 {product.variety}
               </p>
               <p className="mt-5 font-display text-3xl font-semibold text-primary">
-                TZS {pricing.price.toLocaleString("en-TZ")}
+                {formatPrice(pricing.price)}
                 <span className="ml-2 font-sans text-sm font-medium text-muted-foreground">
                   / {pricing.unit} · indicative price
                 </span>

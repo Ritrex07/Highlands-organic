@@ -3,12 +3,12 @@ import { Check, Clipboard, Minus, Plus, Send, Trash2 } from "lucide-react";
 
 import { getProductPricing, products } from "@/lib/products";
 import { useOrderList } from "@/lib/use-order-list";
-
-const money = (value: number) => `TZS ${Math.round(value).toLocaleString("en-TZ")}`;
+import { useCurrency } from "@/lib/use-currency";
 
 export function OrderBuilder() {
   const { items, getQuantity, setQuantity, remove, clear, totalUnits } =
     useOrderList();
+  const { formatPrice } = useCurrency();
   const [copied, setCopied] = useState(false);
   const selected = items
     .map((slug) => products.find((product) => product.slug === slug))
@@ -29,9 +29,9 @@ export function OrderBuilder() {
   const copyOrder = async () => {
     const lines = selected.map((product) => {
       const pricing = getProductPricing(product.slug);
-      return `${product.name} — ${getQuantity(product.slug)} ${pricing.unit} — ${money(pricing.price * getQuantity(product.slug))}`;
+      return `${product.name} — ${getQuantity(product.slug)} ${pricing.unit} — ${formatPrice(pricing.price * getQuantity(product.slug))}`;
     });
-    const summary = `Highlands Organic order request\n\n${lines.join("\n")}\n\nEstimated product total: ${money(subtotal)}\nFinal freight and wholesale pricing to be confirmed.`;
+    const summary = `Highlands Organic order request\n\n${lines.join("\n")}\n\nEstimated product total: ${formatPrice(subtotal)}\nFinal freight and wholesale pricing to be confirmed.`;
     try {
       await navigator.clipboard.writeText(summary);
       setCopied(true);
@@ -127,11 +127,11 @@ export function OrderBuilder() {
                               {product.name}
                             </h4>
                             <p className="text-xs text-muted-foreground">
-                              {money(pricing.price)} / {pricing.unit}
+                              {formatPrice(pricing.price)} / {pricing.unit}
                             </p>
                           </div>
                           <p className="font-semibold text-primary">
-                            {money(pricing.price * quantity)}
+                            {formatPrice(pricing.price * quantity)}
                           </p>
                         </div>
                         <div className="mt-3 flex items-center justify-between">
@@ -188,7 +188,7 @@ export function OrderBuilder() {
                     </p>
                   </div>
                   <p className="font-display text-3xl font-semibold text-primary">
-                    {money(subtotal)}
+                    {formatPrice(subtotal)}
                   </p>
                 </div>
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">

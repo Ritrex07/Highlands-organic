@@ -3,11 +3,13 @@ import { ArrowRight } from "lucide-react";
 
 import { getProductPricing, type Product } from "@/lib/products";
 import { useOrderList } from "@/lib/use-order-list";
+import { useCurrency } from "@/lib/use-currency";
 
 export function ProductCard({ product }: { product: Product }) {
   const { add, has } = useOrderList();
   const added = has(product.slug);
   const pricing = getProductPricing(product.slug);
+  const { formatPrice } = useCurrency();
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-lg border border-border bg-card">
@@ -41,7 +43,7 @@ export function ProductCard({ product }: { product: Product }) {
               Indicative price
             </p>
             <p className="mt-1 font-display text-2xl font-semibold tracking-tight text-primary">
-              TZS {pricing.price.toLocaleString("en-TZ")}
+              {formatPrice(pricing.price)}
               <span className="ml-1 font-sans text-xs font-medium text-muted-foreground">
                 / {pricing.unit}
               </span>
