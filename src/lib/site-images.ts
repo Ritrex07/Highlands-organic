@@ -7,7 +7,6 @@ import chilliSauce from "@/assets/site-images/IMG-20260911-WA0007.jpg";
 import stinglessBeeHoney from "@/assets/site-images/IMG-20260911-WA0008.jpg";
 import farmerTeam from "@/assets/site-images/IMG-20260911-WA0009.jpg";
 import avocadoHarvest from "@/assets/site-images/IMG-20260911-WA0010.jpg";
-import logo from "@/assets/site-images/page1-image-1.png";
 import packhouse from "@/assets/site-images/page2-image-2.png";
 import fieldHillside from "@/assets/site-images/page2-image-3.png";
 import avocados from "@/assets/site-images/page5-image-4.png";
@@ -28,7 +27,6 @@ export const siteImages = {
   stinglessBeeHoney,
   farmerTeam,
   avocadoHarvest,
-  logo,
   packhouse,
   fieldHillside,
   avocados,
