@@ -57,7 +57,7 @@ const products = [
   },
   {
     name: "Chillies",
-    varieties: "Aji Limo · Aji Amarillo · Aji Escabeche · Demon · Habanero Red",
+    varieties: "Cayenne",
     description:
       "A spectrum of premium chillies, grown to specification for fresh and processing markets.",
     image: siteImages.chillies,

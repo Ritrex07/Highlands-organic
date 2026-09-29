@@ -23,7 +23,7 @@ export const Route = createFileRoute("/products/")({
       {
         name: "description",
         content:
-          "Browse Tanzania Highland Organic Co. Ltd products from Tanzania: Hass, Fuerte and Local avocados, honey, and Aji Limo, Aji Amarillo, Aji Escabeche, Demon and Habanero Red chillies.",
+          "Browse Tanzania Highland Organic Co. Ltd products from Tanzania: Hass, Fuerte and Local avocados, honey, and Cayenne chillies.",
       },
       { property: "og:title", content: "Our Products — Tanzania Highland Organic Co. Ltd" },
       {
@@ -145,8 +145,8 @@ function ProductsPage() {
         <CategorySection
           id="chillies"
           eyebrow="Chillies"
-          title="Five varieties, one standard."
-          text="Compare our chilli varieties — each grown to the specification agreed with the buyer."
+          title="Cayenne, grown to specification."
+          text="Our Cayenne chillies are grown to the specification agreed with the buyer."
           category="chillies"
         />
 
