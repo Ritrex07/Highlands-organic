@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { AnimatedMarqueeHero } from "@/components/AnimatedMarqueeHero";
+import { QuoteForm } from "@/components/QuoteForm";
 import { newImages } from "@/lib/new-images";
 import { siteImages } from "@/lib/site-images";
 
@@ -12,16 +13,16 @@ export const Route = createFileRoute("/")({
     meta: [
       {
         title:
-          "Highlands Organic — Organic Avocados, Honey & Chillies from Tanzania",
+          "Tanzania Highland Organic Co. Ltd — Organic Avocados, Honey & Chillies from Tanzania",
       },
       {
         name: "description",
         content:
-          "Highlands Organic Co. Ltd exports certified organic avocados, honey and chillies from Tanzania's highlands, grown in partnership with smallholder farmers.",
+          "Tanzania Highland Organic Co. Ltd exports avocados, honey and chillies from Tanzania's highlands, grown in partnership with smallholder farmers.",
       },
       {
         property: "og:title",
-        content: "Highlands Organic — From Tanzania's Highlands to the World",
+        content: "Tanzania Highland Organic Co. Ltd — From Tanzania's Highlands to the World",
       },
       {
         property: "og:description",
@@ -49,7 +50,7 @@ const products = [
     name: "Honey",
     varieties: "Organic Honey",
     description:
-      "Pure, certified-organic honey harvested from the forests of the southern highlands.",
+      "Pure honey from the forests of the southern highlands.",
     image: siteImages.honey,
     alt: "Golden organic HOC honey being drizzled into a glass jar",
     href: "#honey",
@@ -67,14 +68,14 @@ const products = [
 
 const heroSlides = [
   { src: newImages.avocadoHarvest, alt: "Fresh avocados in yellow harvest crates", label: "Harvest / Avocado" },
-  { src: newImages.farmerTeam, alt: "Highlands Organic farmers in an avocado orchard", label: "People / Partnership" },
+  { src: newImages.farmerTeam, alt: "Tanzania Highland Organic Co. Ltd farmers in an avocado orchard", label: "People / Partnership" },
   { src: newImages.avocadoTree, alt: "Avocados growing on a partner farm tree", label: "Field / Avocado" },
-  { src: newImages.exportBoxes, alt: "Highlands Organic avocado boxes stacked for export", label: "Packhouse / Export" },
+  { src: newImages.exportBoxes, alt: "Tanzania Highland Organic Co. Ltd avocado boxes stacked for export", label: "Packhouse / Export" },
   { src: newImages.beekeeping, alt: "Beekeepers working in the highlands", label: "Field / Honey" },
-  { src: newImages.honeyBuckets, alt: "Highlands Organic honey buckets prepared for market", label: "Product / Honey" },
-  { src: newImages.stinglessBeeHoney, alt: "Highlands Organic Stingless Bee Honey packaging", label: "Product / Honey" },
-  { src: newImages.chilliSauce, alt: "Highlands Organic chilli sauce bottles", label: "Product / Chilli" },
-  { src: newImages.brandedUniform, alt: "Highlands Organic branded field uniform", label: "People / HOC" },
+  { src: newImages.honeyBuckets, alt: "Tanzania Highland Organic Co. Ltd honey buckets prepared for market", label: "Product / Honey" },
+  { src: newImages.stinglessBeeHoney, alt: "Tanzania Highland Organic Co. Ltd Stingless Bee Honey packaging", label: "Product / Honey" },
+  { src: newImages.chilliSauce, alt: "Tanzania Highland Organic Co. Ltd chilli sauce bottles", label: "Product / Chilli" },
+  { src: newImages.brandedUniform, alt: "Tanzania Highland Organic Co. Ltd branded field uniform", label: "People / HOC" },
 ];
 
 function Index() {
@@ -89,7 +90,7 @@ function Index() {
         <AnimatedMarqueeHero
           tagline="HOC / Origin-led agricultural export"
           title="Certified produce, grown with purpose."
-          description="Highlands Organic partners with smallholder farmers to grow premium certified-organic produce: avocados, forest honey and chillies, harvested at altitude and prepared for buyers who care where their produce comes from."
+          description="Tanzania Highland Organic Co. Ltd works with partner farmers to grow avocados, forest honey and chillies, prepared for buyers who care where their produce comes from."
           ctaText="View products"
           ctaHref="#products"
           images={heroSlides}
@@ -113,7 +114,7 @@ function Index() {
               className="mt-6 max-w-xl animate-fade-up text-base leading-relaxed text-muted-foreground sm:text-lg"
               style={{ animationDelay: "0.4s" }}
             >
-              Highlands Organic partners with smallholder farmers to grow
+              Tanzania Highland Organic Co. Ltd works with smallholder farmers to grow
               premium certified-organic produce — avocados, forest honey and
               chillies — harvested at altitude and exported to markets across
               the globe.
@@ -141,7 +142,7 @@ function Index() {
             <aside
               className="w-full max-w-[22rem] justify-self-end animate-fade-up overflow-hidden rounded-2xl border border-primary-foreground/25 bg-foreground/20 shadow-2xl shadow-foreground/20 backdrop-blur-sm lg:mb-1"
               style={{ animationDelay: "0.45s" }}
-              aria-label="Highlands Organic field and product photography"
+              aria-label="Tanzania Highland Organic Co. Ltd field and product photography"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <div
@@ -197,7 +198,7 @@ function Index() {
                   Organic farming, rooted in partnership.
                 </h2>
                 <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
-                  Highlands Organic Co. Ltd is a Tanzanian organic exporter
+                  Tanzania Highland Organic Co. Ltd is a Tanzanian exporter
                   working hand in hand with smallholder farmers across the
                   southern highlands. We grow, harvest and prepare premium
                   produce with care — building trusted partnerships from the
@@ -214,7 +215,7 @@ function Index() {
               <div className="overflow-hidden rounded-[1.75rem] border border-border/70 bg-card p-2 shadow-sm">
                 <img
                       src={siteImages.packhouse}
-                  alt="Freshly harvested avocados being weighed at the Highlands Organic packhouse"
+                  alt="Freshly harvested avocados being weighed at the Tanzania Highland Organic Co. Ltd packhouse"
                   loading="lazy"
                   className="aspect-[4/3] w-full rounded-[1.25rem] object-cover"
                 />
@@ -288,7 +289,7 @@ function Index() {
                 markets.
               </h2>
               <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/80 sm:text-lg">
-                From the highlands of Tanzania, Highlands Organic prepares and
+                From the highlands of Tanzania, Tanzania Highland Organic Co. Ltd prepares and
                 exports premium produce to buyers at home and abroad — with
                 quality, traceability and care at every step.
               </p>
@@ -316,10 +317,10 @@ function Index() {
               </p>
               <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
                 <a
-                  href="#order"
+                  href="/products"
                   className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
                 >
-                  Order Products
+                  View Products
                   <ArrowRight className="h-4 w-4" />
                 </a>
                 <a
@@ -329,6 +330,7 @@ function Index() {
                   Request a Quote
                 </a>
               </div>
+              <QuoteForm />
             </div>
           </div>
         </section>

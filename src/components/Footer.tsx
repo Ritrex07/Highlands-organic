@@ -32,12 +32,12 @@ export function Footer() {
             <Link to="/" className="flex items-center gap-3">
               <img
                 src={logoUrl}
-                alt="Highlands Organic logo"
+                alt="Tanzania Highland Organic Co. Ltd logo"
                 className="h-10 w-10 rounded-full object-cover"
               />
               <span className="flex flex-col leading-tight">
                 <span className="font-display text-lg font-semibold tracking-tight">
-                  Highlands Organic
+                  Tanzania Highland Organic Co. Ltd
                 </span>
                 <span className="text-[0.625rem] font-medium uppercase tracking-[0.2em] text-primary-foreground/60">
                   Tanzania
@@ -45,9 +45,8 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-primary-foreground/70">
-              Certified organic avocados, honey and chillies from
-              Tanzania&rsquo;s highlands — grown with smallholder farmers,
-              exported worldwide.
+              Avocados, honey and chillies from Tanzania&rsquo;s highlands — grown
+              on our farms and by partner farmers, and exported worldwide.
             </p>
           </div>
 
@@ -74,7 +73,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-primary-foreground/15 pt-8 sm:flex-row">
           <p className="text-xs text-primary-foreground/60">
-            &copy; {new Date().getFullYear()} Highlands Organic Co. Ltd. All
+            &copy; {new Date().getFullYear()} Tanzania Highland Organic Co. Ltd. All
             rights reserved.
           </p>
           <a

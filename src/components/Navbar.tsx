@@ -1,13 +1,9 @@
-import { useEffect, useState, type CSSProperties } from "react";
-import { Menu, ShoppingBasket, X } from "lucide-react";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import { useLocation } from "@tanstack/react-router";
 
 import { logoUrl } from "@/lib/assets";
-import { getProduct } from "@/lib/products";
-import { useOrderList } from "@/lib/use-order-list";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-
-const ORDER_ADDED_EVENT = "hoc-order-added";
 
 const topLinks = [
   { label: "Our Approach", href: "/our-approach" },
@@ -18,72 +14,6 @@ const topLinks = [
 export function Navbar() {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [addedProduct, setAddedProduct] = useState<{
-    name: string;
-    image: string;
-  } | null>(null);
-  const [flyingProduct, setFlyingProduct] = useState<{
-    image: string;
-    left: number;
-    top: number;
-    x: number;
-    y: number;
-  } | null>(null);
-  const [basketPulse, setBasketPulse] = useState(false);
-  const { totalUnits } = useOrderList();
-
-  useEffect(() => {
-    let timeout: number | undefined;
-    const handleAdded = (event: Event) => {
-      const detail = (
-        event as CustomEvent<{
-          slug: string;
-          source?: { left: number; top: number; width: number; height: number };
-        }>
-      ).detail;
-      const slug = detail?.slug;
-      const product = slug ? getProduct(slug) : undefined;
-      if (!product) return;
-
-      setAddedProduct({ name: product.name, image: product.image });
-      if (detail.source) {
-        const baskets = Array.from(
-          document.querySelectorAll<HTMLElement>("[data-order-basket]"),
-        );
-        const basket = baskets.find((element) => {
-          const rect = element.getBoundingClientRect();
-          return rect.width > 0 && rect.height > 0;
-        });
-        if (basket) {
-          const basketRect = basket.getBoundingClientRect();
-          const startX = detail.source.left + detail.source.width / 2;
-          const startY = detail.source.top + detail.source.height / 2;
-          const endX = basketRect.left + basketRect.width / 2;
-          const endY = basketRect.top + basketRect.height / 2;
-          setFlyingProduct({
-            image: product.image,
-            left: startX - 22,
-            top: startY - 22,
-            x: endX - startX,
-            y: endY - startY,
-          });
-          window.setTimeout(() => {
-            setFlyingProduct(null);
-            setBasketPulse(true);
-            window.setTimeout(() => setBasketPulse(false), 450);
-          }, 720);
-        }
-      }
-      if (timeout) window.clearTimeout(timeout);
-      timeout = window.setTimeout(() => setAddedProduct(null), 1600);
-    };
-
-    window.addEventListener(ORDER_ADDED_EVENT, handleAdded);
-    return () => {
-      window.removeEventListener(ORDER_ADDED_EVENT, handleAdded);
-      if (timeout) window.clearTimeout(timeout);
-    };
-  }, []);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 lg:px-8">
@@ -93,12 +23,12 @@ export function Navbar() {
           <a href="/" className="flex items-center gap-3">
             <img
               src={logoUrl}
-              alt="Highlands Organic logo"
+              alt="Tanzania Highland Organic Co. Ltd logo"
               className="h-10 w-10 rounded-full border border-primary-foreground/30 object-cover"
             />
             <span className="flex flex-col leading-tight">
               <span className="font-display text-lg font-semibold tracking-tight text-primary-foreground">
-                Highlands Organic
+                Tanzania Highland Organic Co. Ltd
               </span>
               <span className="text-[0.625rem] font-medium uppercase tracking-[0.2em] text-primary-foreground/65">
                 Tanzania
@@ -135,37 +65,8 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <a
-            href="/products#order"
-            data-order-basket
-            aria-label={`View order${totalUnits ? `, ${totalUnits} ${totalUnits === 1 ? "item" : "items"}` : ""}`}
-            className={`group relative hidden items-center gap-2 rounded-full bg-accent px-4 py-2.5 text-sm font-semibold text-accent-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-orange-500 hover:text-white hover:shadow-md lg:inline-flex ${basketPulse ? "animate-basket-pulse" : ""}`}
-          >
-            <ShoppingBasket className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" />
-            <span>Order</span>
-            {totalUnits > 0 && (
-              <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1.5 text-[0.65rem] font-bold text-primary-foreground transition-colors duration-200 group-hover:bg-orange-100 group-hover:text-orange-900">
-                {totalUnits > 99 ? "99+" : totalUnits}
-              </span>
-            )}
-          </a>
-
           {/* Mobile toggle */}
           <div className="flex items-center gap-1 lg:hidden">
-            <a
-              href="/products#order"
-              data-order-basket
-              aria-label={`View order${totalUnits ? `, ${totalUnits} ${totalUnits === 1 ? "item" : "items"}` : ""}`}
-              className={`relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-accent text-accent-foreground transition-all duration-200 hover:bg-orange-500 hover:text-white ${basketPulse ? "animate-basket-pulse" : ""}`}
-            >
-              <ShoppingBasket className="h-4 w-4" />
-              {totalUnits > 0 && (
-                <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-orange-500 px-1 text-[0.55rem] font-bold text-white">
-                  {totalUnits > 99 ? "99+" : totalUnits}
-                </span>
-              )}
-            </a>
             <button
               className="inline-flex h-10 w-10 items-center justify-center rounded-full text-primary-foreground transition-colors hover:bg-primary-foreground/10"
               onClick={() => setMobileOpen((open) => !open)}
@@ -181,38 +82,6 @@ export function Navbar() {
           </div>
         </div>
       </div>
-
-      {addedProduct && (
-        <div className="pointer-events-none fixed right-4 top-24 z-[60] flex items-center gap-3 rounded-2xl border border-border bg-background px-3 py-2 text-foreground shadow-lg animate-order-pop sm:right-8">
-          <img
-            src={addedProduct.image}
-            alt=""
-            className="h-10 w-10 rounded-xl object-cover"
-          />
-          <div className="pr-2">
-            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-primary">
-              Added to order
-            </p>
-            <p className="text-sm font-semibold">{addedProduct.name}</p>
-          </div>
-        </div>
-      )}
-
-      {flyingProduct && (
-        <img
-          src={flyingProduct.image}
-          alt=""
-          className="pointer-events-none fixed z-[70] h-11 w-11 rounded-full border-2 border-white object-cover shadow-xl animate-fly-to-basket"
-          style={
-            {
-              left: flyingProduct.left,
-              top: flyingProduct.top,
-              "--fly-x": `${flyingProduct.x}px`,
-              "--fly-y": `${flyingProduct.y}px`,
-            } as CSSProperties
-          }
-        />
-      )}
 
       {/* Mobile menu */}
       {mobileOpen && (
@@ -249,15 +118,6 @@ export function Navbar() {
               </a>
             ))}
 
-            <a
-              href="/products#order"
-              data-order-basket
-              className="mt-3 flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-center text-sm font-semibold text-primary-foreground transition-colors hover:bg-orange-500 hover:text-white"
-              onClick={() => setMobileOpen(false)}
-            >
-              <ShoppingBasket className="h-4 w-4" />
-              View Order{totalUnits > 0 ? ` (${totalUnits})` : ""}
-            </a>
           </nav>
         </div>
       )}

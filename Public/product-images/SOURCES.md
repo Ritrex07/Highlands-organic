@@ -1,5 +1,7 @@
 # Product image sources
 
+- `cayenne.jpg` — [Cayenne pepper](https://commons.wikimedia.org/wiki/File:Cayenne_pepper.jpg), CC BY-SA 4.0, Chinenye N.
+
 These product images were downloaded from Wikimedia Commons on 2026-09-07 and resized through the Wikimedia API's preferred preview URL for web use.
 
 - `hass-avocado.jpg` — [Avocado Hass – single and halved](https://commons.wikimedia.org/wiki/File:Avocado_Hass_-_single_and_halved.jpg), CC BY-SA 4.0, Ivar Leidus.

@@ -5,7 +5,6 @@ import { ChevronRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ProductCard } from "@/components/ProductCard";
-import { OrderBuilder } from "@/components/OrderBuilder";
 import {
   categories,
   products,
@@ -13,21 +12,20 @@ import {
   type CategoryId,
 } from "@/lib/products";
 import productHeroImage from "@/assets/product-hero-tanzania.png";
-import { CurrencySelector } from "@/lib/use-currency";
 
 export const Route = createFileRoute("/products/")({
   head: () => ({
     meta: [
       {
         title:
-          "Our Products — Organic Avocados, Honey & Chillies | Highlands Organic",
+          "Our Products — Organic Avocados, Honey & Chillies | Tanzania Highland Organic Co. Ltd",
       },
       {
         name: "description",
         content:
-          "Browse Highlands Organic products from Tanzania: Hass, Fuerte and Local avocados, organic honey, and Aji Limo, Aji Amarillo, Aji Escabeche, Demon and Habanero Red chillies.",
+          "Browse Tanzania Highland Organic Co. Ltd products from Tanzania: Hass, Fuerte and Local avocados, honey, and Aji Limo, Aji Amarillo, Aji Escabeche, Demon and Habanero Red chillies.",
       },
-      { property: "og:title", content: "Our Products — Highlands Organic" },
+      { property: "og:title", content: "Our Products — Tanzania Highland Organic Co. Ltd" },
       {
         property: "og:description",
         content:
@@ -114,7 +112,6 @@ function ProductsPage() {
                   );
                 })}
               </div>
-              <CurrencySelector />
             </div>
 
             <div
@@ -152,8 +149,6 @@ function ProductsPage() {
           text="Compare our chilli varieties — each grown to the specification agreed with the buyer."
           category="chillies"
         />
-
-        <OrderBuilder />
 
         {/* Final CTA */}
         <section className="bg-white">

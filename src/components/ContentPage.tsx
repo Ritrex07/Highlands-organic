@@ -391,7 +391,7 @@ function LegacyContactPage() {
                 Start a conversation.
               </h2>
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-                Reach the Highlands Organic team directly using any of the
+                Reach the Tanzania Highland Organic Co. Ltd team directly using any of the
                 numbers below.
               </p>
               <div className="mt-8 space-y-4 border-l-2 border-accent pl-5 text-sm">
@@ -559,7 +559,7 @@ export function ContactPage() {
         <section className="relative flex min-h-[680px] items-end overflow-hidden rounded-b-[2.5rem] bg-primary text-primary-foreground">
           <img
             src={newImages.avocadoTree}
-            alt="Avocados growing on a Highlands Organic farm"
+            alt="Avocados growing on a Tanzania Highland Organic Co. Ltd farm"
             className="absolute inset-0 h-full w-full object-cover object-center animate-hero-zoom"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-primary/55 to-primary/20" />
@@ -568,7 +568,7 @@ export function ContactPage() {
             <div className="max-w-3xl animate-fade-up">
               <Breadcrumb current="Contact" />
               <p className="mt-8 text-xs font-semibold uppercase tracking-[0.32em] text-accent">
-                Highlands Organic Tanzania
+                Tanzania Highland Organic Co. Ltd
               </p>
               <h1 className="mt-5 max-w-3xl font-display text-5xl font-semibold leading-[0.98] tracking-[-0.04em] sm:text-7xl lg:text-8xl">
                 Get in <span className="text-accent">Touch</span>
@@ -668,7 +668,7 @@ export function ContactPage() {
                 Follow our journey from farm to world.
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-primary-foreground/75 sm:text-base">
-                Follow Highlands Organic for a closer look at our farmers,
+                Follow Tanzania Highland Organic Co. Ltd for a closer look at our farmers,
                 products, partnerships, and the work we do to grow a greener
                 future from Tanzania.
               </p>
@@ -683,7 +683,7 @@ export function ContactPage() {
                   href={href}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label={`Follow Highlands Organic on ${label}`}
+                  aria-label={`Follow Tanzania Highland Organic Co. Ltd on ${label}`}
                   title={label}
                   className={`group inline-flex h-12 w-12 items-center justify-center rounded-full border border-primary-foreground/25 bg-background/10 transition-all duration-200 hover:-translate-y-1 hover:border-transparent ${hover} hover:text-white hover:shadow-lg`}
                 >

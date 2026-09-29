@@ -1,23 +1,18 @@
 import { PhoneCall } from "lucide-react";
 
-const whatsappNumber = (
-  import.meta.env.VITE_WHATSAPP_NUMBER || "255754341236"
-).replace(/\D/g, "");
-const message = encodeURIComponent(
-  "Hello Highlands Organic, I would like to enquire about your products.",
-);
-const whatsappHref = whatsappNumber
-  ? `https://wa.me/${whatsappNumber}?text=${message}`
-  : `https://wa.me/?text=${message}`;
+import { hasWhatsAppNumber, whatsappHref } from "@/lib/whatsapp";
+
+const message =
+  "Hello Tanzania Highland Organic Co. Ltd, I would like to enquire about your products.";
 
 export function WhatsAppButton() {
   return (
     <a
-      href={whatsappHref}
+      href={whatsappHref(message)}
       target="_blank"
       rel="noreferrer"
-      aria-label="Chat with Highlands Organic on WhatsApp"
-      title="Chat with Highlands Organic on WhatsApp"
+      aria-label="Chat with Tanzania Highland Organic Co. Ltd on WhatsApp"
+      title="Chat with Tanzania Highland Organic Co. Ltd on WhatsApp"
       className="group fixed bottom-5 right-5 z-40 inline-flex items-center sm:bottom-7 sm:right-7"
     >
       <span
@@ -33,7 +28,7 @@ export function WhatsAppButton() {
         <span className="absolute right-0.5 top-0.5 h-3 w-3 rounded-full border-2 border-white bg-[#B7F34A]" />
       </span>
       <span className="pointer-events-none absolute right-[calc(100%+0.75rem)] whitespace-nowrap rounded-full bg-foreground px-3.5 py-2 text-xs font-semibold text-background opacity-0 shadow-lg transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100 group-focus-visible:translate-x-0.5 group-focus-visible:opacity-100">
-        Chat on WhatsApp
+        {hasWhatsAppNumber() ? "Chat on WhatsApp" : "WhatsApp number not configured"}
       </span>
     </a>
   );

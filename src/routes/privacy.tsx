@@ -6,11 +6,11 @@ import { Navbar } from "@/components/Navbar";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy & Cookies | Highlands Organic" },
+      { title: "Privacy & Cookies | Tanzania Highland Organic Co. Ltd" },
       {
         name: "description",
         content:
-          "How Highlands Organic uses cookies, approximate location detection and personal information.",
+          "How Tanzania Highland Organic Co. Ltd uses cookies, approximate location detection and personal information.",
       },
     ],
   }),
@@ -31,7 +31,7 @@ function PrivacyPage() {
           </h1>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">
             Effective date: 25 September 2026. This notice explains how
-            Highlands Organic Co. Ltd uses information when you visit this
+            Tanzania Highland Organic Co. Ltd uses information when you visit this
             website.
           </p>
 

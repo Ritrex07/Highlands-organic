@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ChevronRight, Minus, Plus } from "lucide-react";
+import { ChevronRight, MessageCircle, Minus, Plus } from "lucide-react";
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ProductCard } from "@/components/ProductCard";
-import { getProduct, getProductPricing, products } from "@/lib/products";
-import { useOrderList } from "@/lib/use-order-list";
-import { useCurrency } from "@/lib/use-currency";
+import {
+  formatProductPrice,
+  getProduct,
+  getProductPricing,
+  products,
+} from "@/lib/products";
+import { hasWhatsAppNumber, whatsappHref } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/products/$slug")({
   loader: ({ params }) => {
@@ -19,13 +23,13 @@ export const Route = createFileRoute("/products/$slug")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Product not found — Highlands Organic" },
+          { title: "Product not found — Tanzania Highland Organic Co. Ltd" },
           { name: "robots", content: "noindex" },
         ],
       };
     }
     const { product } = loaderData;
-    const title = `${product.name} — ${product.categoryLabel} | Highlands Organic`;
+    const title = `${product.name} — ${product.categoryLabel} | Tanzania Highland Organic Co. Ltd`;
     return {
       meta: [
         { title },
@@ -66,8 +70,8 @@ function ProductDetail() {
   const pricing = getProductPricing(product.slug);
   const [activeImage, setActiveImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
-  const { add, has } = useOrderList();
-  const { formatPrice } = useCurrency();
+  const priceAvailable = pricing.price > 0;
+  const whatsappMessage = `Hello Tanzania Highland Organic Co. Ltd, I would like to order/enquire about:\n\nProduct: ${product.name}\nQuantity: ${quantity}${priceAvailable ? `\nPrice: ${formatProductPrice(pricing.price)} / ${pricing.unit}\nEstimated total: ${formatProductPrice(pricing.price * quantity)}` : ""}\n\nPlease confirm availability, final price and delivery details.`;
 
   const related = products
     .filter((p) => p.category === product.category && p.slug !== product.slug)
@@ -152,12 +156,18 @@ function ProductDetail() {
               <p className="mt-2 text-sm font-medium text-muted-foreground">
                 {product.variety}
               </p>
-              <p className="mt-5 font-display text-3xl font-semibold text-primary">
-                {formatPrice(pricing.price)}
-                <span className="ml-2 font-sans text-sm font-medium text-muted-foreground">
-                  / {pricing.unit} · indicative price
-                </span>
-              </p>
+              {priceAvailable ? (
+                <p className="mt-5 font-display text-3xl font-semibold text-primary">
+                  {formatProductPrice(pricing.price)}
+                  <span className="ml-2 font-sans text-sm font-medium text-muted-foreground">
+                    / {pricing.unit}
+                  </span>
+                </p>
+              ) : (
+                <p className="mt-5 font-semibold text-primary">
+                  Price available on enquiry.
+                </p>
+              )}
               <p className="mt-6 text-lg leading-relaxed text-foreground/80">
                 {product.short}
               </p>
@@ -174,51 +184,49 @@ function ProductDetail() {
                 </dd>
               </dl>
 
-              {product.quantity && (
-                <div className="mt-8">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                    Quantity
-                  </p>
-                  <div className="mt-3 inline-flex items-center rounded-full border border-border">
-                    <button
-                      onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                      aria-label="Decrease quantity"
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full text-foreground transition-colors hover:bg-secondary"
-                    >
-                      <Minus className="h-4 w-4" />
-                    </button>
-                    <span
-                      aria-live="polite"
-                      className="w-10 text-center text-sm font-semibold"
-                    >
-                      {quantity}
-                    </span>
-                    <button
-                      onClick={() => setQuantity((q) => q + 1)}
-                      aria-label="Increase quantity"
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full text-foreground transition-colors hover:bg-secondary"
-                    >
-                      <Plus className="h-4 w-4" />
-                    </button>
-                  </div>
+              <div className="mt-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                  Quantity
+                </p>
+                <div className="mt-3 inline-flex items-center rounded-full border border-border">
+                  <button
+                    onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                    aria-label="Decrease quantity"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full text-foreground transition-colors hover:bg-secondary"
+                  >
+                    <Minus className="h-4 w-4" />
+                  </button>
+                  <span
+                    aria-live="polite"
+                    className="w-10 text-center text-sm font-semibold"
+                  >
+                    {quantity}
+                  </span>
+                  <button
+                    onClick={() => setQuantity((q) => q + 1)}
+                    aria-label="Increase quantity"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full text-foreground transition-colors hover:bg-secondary"
+                  >
+                    <Plus className="h-4 w-4" />
+                  </button>
                 </div>
-              )}
+                {priceAvailable && (
+                  <p className="mt-4 text-lg font-semibold text-primary">
+                    Subtotal: {formatProductPrice(pricing.price * quantity)}
+                  </p>
+                )}
+              </div>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <button
-                  onClick={(event) => {
-                    const rect = event.currentTarget.getBoundingClientRect();
-                    add(product.slug, quantity, {
-                      left: rect.left,
-                      top: rect.top,
-                      width: rect.width,
-                      height: rect.height,
-                    });
-                  }}
-                  className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+                <a
+                  href={whatsappHref(whatsappMessage)}
+                  target={hasWhatsAppNumber() ? "_blank" : undefined}
+                  rel={hasWhatsAppNumber() ? "noreferrer" : undefined}
+                  className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#1fbd5b] hover:shadow-lg"
                 >
-                  {has(product.slug) ? "Added to your order" : "Add to Order"}
-                </button>
+                  <MessageCircle className="h-4 w-4" />
+                  Order via WhatsApp
+                </a>
                 <a
                   href="/#quote"
                   className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"

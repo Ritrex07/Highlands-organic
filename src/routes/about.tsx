@@ -9,15 +9,15 @@ import { siteImages } from "@/lib/site-images";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — Highlands Organic Co. Ltd" },
+      { title: "About Us — Tanzania Highland Organic Co. Ltd" },
       {
         name: "description",
         content:
-          "The story of Highlands Organic Co. Ltd — a Tanzanian organic exporter established in 2010, growing avocados, honey and chillies in partnership with smallholder farmers.",
+          "The story of Tanzania Highland Organic Co. Ltd — a Tanzanian exporter established in 2010, growing avocados, honey and chillies in partnership with smallholder farmers.",
       },
       {
         property: "og:title",
-        content: "About Highlands Organic — Growing With Purpose",
+        content: "About Tanzania Highland Organic Co. Ltd — Growing With Purpose",
       },
       {
         property: "og:description",
@@ -34,7 +34,7 @@ export const Route = createFileRoute("/about")({
 const milestones = [
   {
     year: "2010",
-    title: "Highlands Organic is established",
+    title: "Tanzania Highland Organic Co. Ltd is established",
     text: "HOC is founded in Tanzania's southern highlands with a simple conviction: smallholder farmers can grow world-class organic produce.",
   },
   {
@@ -92,7 +92,7 @@ const gallery = [
   },
   {
     src: siteImages.exportPallets,
-    alt: "Branded Highlands Organic avocado boxes ready for shipment",
+    alt: "Branded Tanzania Highland Organic Co. Ltd avocado boxes ready for shipment",
     label: "Packed for market",
   },
   {
@@ -102,7 +102,7 @@ const gallery = [
   },
   {
     src: newImages.exportBoxes,
-    alt: "Highlands Organic avocado boxes stacked for export",
+    alt: "Tanzania Highland Organic Co. Ltd avocado boxes stacked for export",
     label: "Export boxes",
   },
   {
@@ -112,32 +112,32 @@ const gallery = [
   },
   {
     src: newImages.honeyBuckets,
-    alt: "Highlands Organic honey buckets ready for processing",
+    alt: "Tanzania Highland Organic Co. Ltd honey buckets ready for processing",
     label: "Honey production",
   },
   {
     src: newImages.brandedUniform,
-    alt: "Highlands Organic branded field uniform",
+    alt: "Tanzania Highland Organic Co. Ltd branded field uniform",
     label: "Our people",
   },
   {
     src: newImages.avocadoTree,
-    alt: "Avocados growing on a Highlands Organic partner farm tree",
+    alt: "Avocados growing on a Tanzania Highland Organic Co. Ltd partner farm tree",
     label: "Growing at altitude",
   },
   {
     src: newImages.chilliSauce,
-    alt: "Highlands Organic Pilpili Mbuz chilli sauce",
+    alt: "Tanzania Highland Organic Co. Ltd Pilpili Mbuz chilli sauce",
     label: "Value-added products",
   },
   {
     src: newImages.stinglessBeeHoney,
-    alt: "Highlands Organic Stingless Bee Honey packaging",
+    alt: "Tanzania Highland Organic Co. Ltd Stingless Bee Honey packaging",
     label: "Packaged honey",
   },
   {
     src: newImages.farmerTeam,
-    alt: "Highlands Organic farmers and partners in an avocado orchard",
+    alt: "Tanzania Highland Organic Co. Ltd farmers and partners in an avocado orchard",
     label: "Farmer partnerships",
   },
   {
@@ -189,7 +189,7 @@ function AboutPage() {
               className="mt-6 max-w-xl animate-fade-up text-base leading-relaxed text-primary-foreground/85 sm:text-lg"
               style={{ animationDelay: "0.4s" }}
             >
-              Highlands Organic Company Limited is a Tanzanian organic producer
+              Tanzania Highland Organic Co. Ltd is a Tanzanian producer
               and exporter — cultivating avocados, forest honey and premium
               chillies in partnership with smallholder farmers across the
               southern highlands.
@@ -210,7 +210,7 @@ function AboutPage() {
                 </h2>
                 <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
                   <p>
-                    Highlands Organic Company Limited was established in 2010 in
+                    Tanzania Highland Organic Co. Ltd was established in 2010 in
                     the fertile southern highlands of Tanzania, where rich
                     volcanic soils, cool mountain air and reliable rainfall
                     create exceptional conditions for organic agriculture.
@@ -262,7 +262,7 @@ function AboutPage() {
                 <div className="overflow-hidden rounded-2xl border border-border">
                   <img
                     src={siteImages.chilliField}
-                    alt="Red chillies ripening in a Highlands Organic field"
+                    alt="Red chillies ripening in a Tanzania Highland Organic Co. Ltd field"
                     loading="lazy"
                     className="aspect-[4/3] w-full object-cover"
                   />
@@ -413,7 +413,7 @@ function AboutPage() {
                   Stories &amp; Gallery
                 </p>
                 <h2 className="mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-foreground sm:text-4xl">
-                  Life at Highlands Organic.
+                  Life at Tanzania Highland Organic Co. Ltd.
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                   From hillside farms to the packhouse floor — a glimpse of our

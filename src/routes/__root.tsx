@@ -11,7 +11,6 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { CurrencyProvider } from "@/lib/use-currency";
 
 function NotFoundComponent() {
   return (
@@ -82,18 +81,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       meta: [
         { charSet: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { title: "Highlands Organic" },
+        { title: "Tanzania Highland Organic Co. Ltd" },
         {
           name: "description",
           content:
-            "Certified organic avocados, honey and chillies from Tanzania's highlands — grown with smallholder farmers, exported worldwide.",
+            "Avocados, honey and chillies from Tanzania's highlands — grown on our farms and by partner farmers, and exported worldwide.",
         },
-        { name: "author", content: "Highlands Organic Co. Ltd" },
-        { property: "og:title", content: "Highlands Organic" },
+        { name: "author", content: "Tanzania Highland Organic Co. Ltd" },
+        { property: "og:title", content: "Tanzania Highland Organic Co. Ltd" },
         {
           property: "og:description",
           content:
-            "Certified organic avocados, honey and chillies from Tanzania's highlands — grown with smallholder farmers, exported worldwide.",
+            "Avocados, honey and chillies from Tanzania's highlands — grown on our farms and by partner farmers, and exported worldwide.",
         },
         { property: "og:type", content: "website" },
         { name: "twitter:card", content: "summary_large_image" },
@@ -154,10 +153,8 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <CurrencyProvider>
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
-      </CurrencyProvider>
+      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+      <Outlet />
     </QueryClientProvider>
   );
 }
