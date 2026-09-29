@@ -45,8 +45,8 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-primary-foreground/70">
-              Avocados, honey and chillies from Tanzania&rsquo;s highlands — grown
-              on our farms and by partner farmers, and exported worldwide.
+              Avocados, honey and chillies from Tanzania&rsquo;s highlands — growing
+              with us alongside smallholder farmers, and exported worldwide.
             </p>
           </div>
 

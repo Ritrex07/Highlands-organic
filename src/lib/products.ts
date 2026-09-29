@@ -53,7 +53,7 @@ export const products: Product[] = [
     short:
       "Our flagship export avocado, grown organically at highland altitude.",
     detail:
-      "Hass avocados are grown on our farms and by partner farmers across Tanzania's southern highlands and prepared at the HOC packhouse. Fruit is sorted and packed with care so it arrives in the condition our buyers expect.",
+      "Hass avocados are grown in our farms and partner farmers across Tanzania's southern highlands and prepared at the HOC packhouse. Fruit is sorted and packed with care so it arrives in the condition our buyers expect.",
     availability: "Available — contact us for current availability.",
     image: hassAvocadoImage,
     alt: "Freshly harvested Hass avocados in a crate at the HOC packhouse",
