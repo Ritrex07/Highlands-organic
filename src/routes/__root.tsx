@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { logoUrl } from "../lib/assets";
 
 function NotFoundComponent() {
   return (
@@ -102,19 +103,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           rel: "stylesheet",
           href: appCss,
         },
-        { rel: "icon", href: "/favicon/favicon.svg", type: "image/svg+xml" },
-        { rel: "icon", href: "/favicon/favicon.ico" },
-        {
-          rel: "icon",
-          href: "/favicon/favicon-96x96.png",
-          type: "image/png",
-          sizes: "96x96",
-        },
-        {
-          rel: "apple-touch-icon",
-          href: "/favicon/apple-touch-icon.png",
-        },
-        { rel: "manifest", href: "/favicon/site.webmanifest" },
+        { rel: "icon", href: logoUrl, type: "image/png", sizes: "96x96" },
+        { rel: "apple-touch-icon", href: logoUrl },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         {
           rel: "preconnect",
