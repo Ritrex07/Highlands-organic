@@ -126,7 +126,7 @@ export const products: Product[] = [
     variety: "Organic honey",
     short: "Pure honey from the forests of the southern highlands.",
     detail:
-      "Our honey comes from hives kept in and around the forests of the southern highlands, then handled with minimal processing so the natural character of the honey is kept intact.",
+      "Our honey is harvested in our farms and handled with minimal processing so the natural character of the honey is kept intact.",
     availability: "Available — contact us for current availability.",
     image: organicHoneyImage,
     alt: "Golden HOC organic honey poured into a glass jar",
