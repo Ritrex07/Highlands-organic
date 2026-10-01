@@ -2,10 +2,9 @@ import hassAvocadoImage from "@/assets/product-images/hass-avocado.jpg";
 import fuerteAvocadoImage from "@/assets/product-images/fuerte-avocado.jpg";
 import localAvocadoImage from "@/assets/product-images/local-avocado.jpg";
 import organicHoneyImage from "@/assets/product-images/organic-honey.jpg";
+import cayenneImage from "@/assets/product-images/red-pepper.jpeg";
 import { newImages } from "@/lib/new-images";
 import { siteImages } from "@/lib/site-images";
-
-const cayenneImage = "/product-images/Red%20pepper.jpeg";
 
 export type CategoryId = "avocados" | "honey" | "chillies";
 
