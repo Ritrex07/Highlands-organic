@@ -2,9 +2,10 @@ import hassAvocadoImage from "@/assets/product-images/hass-avocado.jpg";
 import fuerteAvocadoImage from "@/assets/product-images/fuerte-avocado.jpg";
 import localAvocadoImage from "@/assets/product-images/local-avocado.jpg";
 import organicHoneyImage from "@/assets/product-images/organic-honey.jpg";
-import cayenneImage from "@/assets/product-images/cayenne.jpg";
 import { newImages } from "@/lib/new-images";
 import { siteImages } from "@/lib/site-images";
+
+const cayenneImage = "/product-images/Red%20pepper.jpeg";
 
 export type CategoryId = "avocados" | "honey" | "chillies";
 
@@ -162,9 +163,12 @@ export const products: Product[] = [
   },
 ];
 
-// Keep this empty until HOC confirms verified public prices for a product.
 export const productPricing: Record<string, ProductPricing> = {
+  "hass-avocado": { price: 2500, unit: "kg", currency: "TZS" },
+  "fuerte-avocado": { price: 1700, unit: "kg", currency: "TZS" },
+  "local-avocado": { price: 1500, unit: "kg", currency: "TZS" },
   "organic-honey": { price: 10000, unit: "kg", currency: "TZS" },
+  cayenne: { price: 1500, unit: "kg", currency: "TZS" },
 };
 
 export const getProductPricing = (slug: string) =>
