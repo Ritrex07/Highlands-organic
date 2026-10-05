@@ -13,16 +13,17 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "The story of Tanzania Highland Organic Co. Ltd — a Tanzanian exporter established in 2010, growing avocados, honey and chillies in partnership with smallholder farmers.",
+          "Learn how a Tanzanian agribusiness connects smallholder farmers, responsible production and quality agricultural exports.",
       },
       {
         property: "og:title",
-        content: "About Tanzania Highland Organic Co. Ltd — Growing With Purpose",
+        content:
+          "About Tanzania Highland Organic Co. Ltd — Growing With Purpose",
       },
       {
         property: "og:description",
         content:
-          "Established in 2010 in Tanzania's southern highlands, HOC partners with smallholder farmers to grow certified organic avocados, honey and chillies for the world.",
+          "Established in 2010, HOC partners with smallholder farmers to grow certified organic produce and serve customers in Tanzania and international markets.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -35,7 +36,7 @@ const milestones = [
   {
     year: "2010",
     title: "Tanzania Highland Organic Co. Ltd is established",
-    text: "HOC is founded in Tanzania's southern highlands with a simple conviction: smallholder farmers can grow world-class organic produce.",
+    text: "HOC is founded in Tanzania with a simple conviction: smallholder farmers can grow world-class organic produce.",
   },
   {
     year: "Growing together",
@@ -49,8 +50,8 @@ const milestones = [
   },
   {
     year: "Today",
-    title: "From the highlands to the world",
-    text: "Avocados, forest honey and premium chillies travel from Njombe's farms to buyers across local and international markets.",
+    title: "From Tanzania to the world",
+    text: "Avocados, forest honey and premium chillies travel from Njombe's farms to buyers in local and international markets.",
   },
 ];
 
@@ -107,7 +108,7 @@ const gallery = [
   },
   {
     src: newImages.beekeeping,
-    alt: "HOC beekeepers working with honey hives in the highlands",
+    alt: "HOC beekeepers working with honey hives in Tanzania",
     label: "Forest beekeeping",
   },
   {
@@ -189,10 +190,9 @@ function AboutPage() {
               className="mt-6 max-w-xl animate-fade-up text-base leading-relaxed text-primary-foreground/85 sm:text-lg"
               style={{ animationDelay: "0.4s" }}
             >
-              Tanzania Highland Organic Co. Ltd is a Tanzanian producer
-              and exporter — cultivating avocados, forest honey and premium
-              chillies in partnership with smallholder farmers across the
-              southern highlands.
+              Tanzania Highland Organic Co. Ltd is a Tanzanian producer and
+              exporter, cultivating avocados, forest honey and premium chillies
+              with smallholder farmers in Tanzania.
             </p>
           </div>
         </section>
@@ -206,25 +206,25 @@ function AboutPage() {
                   Our Story
                 </p>
                 <h2 className="mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-foreground sm:text-4xl">
-                  Rooted in the highlands since 2010.
+                  Built on trust since 2010.
                 </h2>
                 <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
                   <p>
                     Tanzania Highland Organic Co. Ltd was established in 2010 in
-                    the fertile southern highlands of Tanzania, where rich
-                    volcanic soils, cool mountain air and reliable rainfall
-                    create exceptional conditions for organic agriculture.
+                    Tanzania's productive southern farming areas, where fertile
+                    soils, a favourable climate and committed growers support
+                    strong agricultural production.
                   </p>
                   <p>
                     From the beginning, our work has been built on partnership
                     with smallholder farmers. Together we grow avocados, harvest
-                    stinging-bee honey from the forests of Njombe, and cultivate
-                    premium chillies — all under certified organic practices.
+                    forest honey from Njombe and cultivate premium chillies
+                    under certified organic practices.
                   </p>
                   <p>
-                    Today, HOC&rsquo;s produce reaches local and international
-                    markets, carrying with it the care of the farmers who grew
-                    it and the character of the land it comes from.
+                    Today, HOC supplies local and international markets with
+                    produce shaped by careful farming, clear communication and
+                    respect for the people who grow it.
                   </p>
                 </div>
 
@@ -293,10 +293,9 @@ function AboutPage() {
                   Our Mission
                 </h3>
                 <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                  To produce and supply high-quality organic agricultural
-                  products — avocados, honey and chillies — while improving the
-                  livelihoods of the smallholder farmers we work with and
-                  upholding the highest standards of organic production.
+                  To grow and supply high-quality agricultural products while
+                  strengthening farmer livelihoods, responsible production and
+                  dependable access to markets.
                 </p>
               </div>
 
@@ -308,9 +307,9 @@ function AboutPage() {
                   Our Vision
                 </h3>
                 <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                  To be a trusted name in organic agriculture — connecting
-                  Tanzania&rsquo;s highlands to markets around the world through
-                  quality, integrity and lasting farmer partnerships.
+                  To be a trusted Tanzanian partner in organic agriculture,
+                  connecting producers and buyers through quality, integrity and
+                  lasting commercial relationships.
                 </p>
               </div>
             </div>
@@ -324,7 +323,7 @@ function AboutPage() {
               <div className="order-2 overflow-hidden rounded-2xl border border-border lg:order-1">
                 <img
                   src={siteImages.fieldHillside}
-                  alt="Lush green chilli fields on a hillside farm in Tanzania's southern highlands"
+                  alt="Lush green chilli fields on a Tanzanian partner farm"
                   loading="lazy"
                   className="aspect-[4/3] w-full object-cover"
                 />
@@ -338,11 +337,10 @@ function AboutPage() {
                 </h2>
                 <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
                   <p>
-                    Everything we export begins with the smallholder farmers of
-                    the southern highlands. HOC works directly with farming
-                    communities — including growers organised through NSHDA — to
-                    strengthen production, raise quality and embed sound organic
-                    agricultural practices.
+                    Everything we export begins with the smallholder farmers we
+                    work alongside. Through farming communities including
+                    growers organised through NSHDA, we strengthen production,
+                    raise quality and support sound organic practices.
                   </p>
                   <p>
                     We invest in long-term relationships rather than one-off
@@ -351,7 +349,7 @@ function AboutPage() {
                   </p>
                 </div>
                 <a
-                  href="/#approach"
+                  href="/our-approach"
                   className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
                 >
                   Learn About Our Approach
@@ -421,7 +419,7 @@ function AboutPage() {
                 </p>
               </div>
               <a
-                href="/#stories"
+                href="#stories"
                 className="inline-flex items-center gap-2 rounded-full border border-primary/30 px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-secondary"
               >
                 View All Stories
@@ -464,12 +462,12 @@ function AboutPage() {
                 Let&rsquo;s Grow Something Better Together.
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-primary-foreground/80 sm:text-lg">
-                Discover our certified-organic produce, or tell us what your
-                market needs — we&rsquo;ll grow it with you.
+                Explore our certified organic produce, or tell us what your
+                market needs so we can build the right supply partnership.
               </p>
               <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
                 <a
-                  href="/#products"
+                  href="/products"
                   className="inline-flex items-center gap-2 rounded-full bg-primary-foreground px-6 py-3 text-sm font-semibold text-primary transition-shadow hover:shadow-lg"
                 >
                   Explore Products

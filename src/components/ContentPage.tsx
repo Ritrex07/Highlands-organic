@@ -126,12 +126,12 @@ export function OurApproachPage() {
           eyebrow="Farmer partnerships"
           title="Partnerships that begin in the field."
           image={siteImages.fieldHillside}
-          imageAlt="A hillside farm in Tanzania's southern highlands"
+          imageAlt="A productive partner farm in Tanzania"
         >
           <p>
-            HOC works with smallholder farmers across Tanzania's southern
-            highlands to improve production and support the people who grow our
-            products.
+            HOC works with smallholder farmers across Tanzania to improve
+            production, strengthen livelihoods and support the people who grow
+            our products.
           </p>
           <p>
             We believe long-term relationships create better outcomes for
@@ -171,11 +171,13 @@ export function OurApproachPage() {
               </p>
             </div>
             <div className="mt-12 grid gap-4 sm:grid-cols-3">
-              {[
-                [Sprout, "Production support"],
-                [Users, "Farmer relationships"],
-                [Leaf, "Responsible practice"],
-              ].map(([Icon, label]) => (
+              {(
+                [
+                  [Sprout, "Production support"],
+                  [Users, "Farmer relationships"],
+                  [Leaf, "Responsible practice"],
+                ] as [typeof Sprout, string][]
+              ).map(([Icon, label]) => (
                 <div
                   key={String(label)}
                   className="border-t-2 border-primary/20 pt-5"
@@ -221,12 +223,12 @@ export function ExportPage() {
     [
       siteImages.avocados,
       "Avocados",
-      "Highland-grown avocados, handled with care from partner farms.",
+      "Carefully grown avocados, handled with care from partner farms.",
     ],
     [
       siteImages.honey,
       "Honey",
-      "Organic honey harvested from the forests of the southern highlands.",
+      "Forest honey harvested through responsible beekeeping and careful handling.",
     ],
     [
       siteImages.chillies,
@@ -239,8 +241,8 @@ export function ExportPage() {
       <Navbar />
       <main>
         <Hero
-          title="From Tanzania's Highlands to the World"
-          intro="We connect agricultural products from Tanzania's southern highlands with customers looking for quality, care and a clear relationship to origin."
+          title="Tanzania produce, ready for the world"
+          intro="We connect quality agricultural products with customers looking for reliable supply, responsible sourcing and a clear relationship to origin."
           image={newImages.avocadoHarvest}
           current="Export"
         />
@@ -251,7 +253,7 @@ export function ExportPage() {
                 Products for markets
               </p>
               <h2 className="mt-4 font-display text-3xl font-semibold sm:text-4xl">
-                Products with a sense of place.
+                Agricultural products with a clear origin.
               </h2>
             </div>
             <div className="mt-12 grid gap-5 md:grid-cols-3">
@@ -291,8 +293,8 @@ export function ExportPage() {
             product.
           </p>
           <p>
-            Product requirements can be discussed with customers depending on
-            their needs.
+            We work with customers to discuss product requirements, volumes,
+            specifications and delivery needs.
           </p>
         </SplitSection>
         <section className="bg-secondary/50">
@@ -306,10 +308,10 @@ export function ExportPage() {
               </h2>
             </div>
             <p className="text-base leading-relaxed text-muted-foreground">
-              Our farmer partnerships are central to sourcing agricultural
-              products responsibly. By working with growers and supporting
-              better production, HOC builds a supply relationship grounded in
-              the field.
+              Our farmer partnerships are central to responsible agricultural
+              sourcing. By working with growers and supporting better
+              production, HOC builds a dependable supply relationship grounded
+              in transparency and shared value.
             </p>
           </div>
         </section>
@@ -376,7 +378,7 @@ function LegacyContactPage() {
                 href="tel:+255743247478"
                 className="transition-colors hover:text-primary"
               >
-                0743 247 478
+                +255 743 247 478
               </a>
             </div>
           </div>
@@ -391,8 +393,8 @@ function LegacyContactPage() {
                 Start a conversation.
               </h2>
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-                Reach the Tanzania Highland Organic Co. Ltd team directly using any of the
-                numbers below.
+                Reach the Tanzania Highland Organic Co. Ltd team directly using
+                any of the numbers below.
               </p>
               <div className="mt-8 space-y-4 border-l-2 border-accent pl-5 text-sm">
                 <p>
@@ -424,7 +426,7 @@ function LegacyContactPage() {
                       href="tel:+255743247478"
                       className="block transition-colors hover:text-foreground"
                     >
-                      0743 247 478
+                      +255 743 247 478
                     </a>
                   </span>
                 </p>
@@ -482,21 +484,27 @@ export function ContactPage() {
         <div className="space-y-1.5">
           <a
             href="tel:+255754341236"
+            aria-label="Call +255 754 341 236"
+            title="Call +255 754 341 236"
             className="block transition-colors hover:text-primary"
           >
             +255 754 341 236
           </a>
           <a
             href="tel:+255754536107"
+            aria-label="Call +255 754 536 107"
+            title="Call +255 754 536 107"
             className="block transition-colors hover:text-primary"
           >
             +255 754 536 107
           </a>
           <a
             href="tel:+255743247478"
+            aria-label="Call +255 743 247 478"
+            title="Call +255 743 247 478"
             className="block transition-colors hover:text-primary"
           >
-            0743 247 478
+            +255 743 247 478
           </a>
         </div>
       ),
@@ -506,12 +514,25 @@ export function ContactPage() {
       title: "Send us an email",
       icon: Mail,
       content: (
-        <a
-          href="mailto:highlandsorganic@gmail.com"
-          className="transition-colors hover:text-primary"
-        >
-          highlandsorganic@gmail.com
-        </a>
+        <div>
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=highlandsorganic@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Email highlandsorganic@gmail.com"
+            title="Open Gmail compose"
+            className="transition-colors hover:text-primary"
+          >
+            highlandsorganic@gmail.com
+          </a>
+          <a
+            href="mailto:highlandsorganic@gmail.com"
+            aria-label="Email using your default email app"
+            className="mt-2 block text-xs transition-colors hover:text-primary"
+          >
+            Use another email app
+          </a>
+        </div>
       ),
     },
     {
@@ -534,21 +555,18 @@ export function ContactPage() {
       href: "https://www.instagram.com/highlands.organic?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==",
       icon: Instagram,
       color: "text-[#E4405F]",
-      hover: "hover:bg-[#E4405F]",
     },
     {
       label: "YouTube",
       href: "https://www.youtube.com/@TANZANIAHIGHLANDSORGANICTV",
       icon: Youtube,
       color: "text-[#FF0000]",
-      hover: "hover:bg-[#FF0000]",
     },
     {
       label: "Facebook",
       href: "https://www.facebook.com/people/Highlands-Organic-TZ/100070179648485/",
       icon: Facebook,
       color: "text-[#1877F2]",
-      hover: "hover:bg-[#1877F2]",
     },
   ];
 
@@ -649,7 +667,7 @@ export function ContactPage() {
                 </p>
                 <Link
                   to="/products"
-                  className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground shadow-lg transition-all hover:-translate-y-0.5 hover:bg-orange-500 hover:text-white hover:shadow-xl"
+                  className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground shadow-lg transition-all hover:-translate-y-0.5 hover:bg-accent/90 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
                 >
                   Explore Our Products <ArrowRight className="h-4 w-4" />
                 </Link>
@@ -668,16 +686,16 @@ export function ContactPage() {
                 Follow our journey from farm to world.
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-primary-foreground/75 sm:text-base">
-                Follow Tanzania Highland Organic Co. Ltd for a closer look at our farmers,
-                products, partnerships, and the work we do to grow a greener
-                future from Tanzania.
+                Follow Tanzania Highland Organic Co. Ltd for a closer look at
+                our farmers, products, partnerships, and the work we do to grow
+                a greener future from Tanzania.
               </p>
             </div>
             <div
               className="flex shrink-0 items-center gap-3"
               aria-label="Social media"
             >
-              {socialLinks.map(({ label, href, icon: Icon, color, hover }) => (
+              {socialLinks.map(({ label, href, icon: Icon, color }) => (
                 <a
                   key={label}
                   href={href}
@@ -685,10 +703,10 @@ export function ContactPage() {
                   rel="noreferrer"
                   aria-label={`Follow Tanzania Highland Organic Co. Ltd on ${label}`}
                   title={label}
-                  className={`group inline-flex h-12 w-12 items-center justify-center rounded-full border border-primary-foreground/25 bg-background/10 transition-all duration-200 hover:-translate-y-1 hover:border-transparent ${hover} hover:text-white hover:shadow-lg`}
+                  className="group inline-flex h-12 w-12 items-center justify-center rounded-full border border-primary-foreground/25 bg-background/10 transition-all duration-200 hover:-translate-y-1 hover:border-primary-foreground/60 hover:bg-primary-foreground/20 focus-visible:bg-primary-foreground/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent active:bg-primary-foreground/25"
                 >
                   <Icon
-                    className={`h-5 w-5 transition-transform group-hover:scale-110 ${color}`}
+                    className={`h-5 w-5 transition-transform group-hover:scale-110 group-hover:!text-primary-foreground group-focus-visible:!text-primary-foreground group-active:!text-primary-foreground ${color}`}
                     aria-hidden="true"
                   />
                 </a>

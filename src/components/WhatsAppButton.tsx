@@ -28,7 +28,9 @@ export function WhatsAppButton() {
         <span className="absolute right-0.5 top-0.5 h-3 w-3 rounded-full border-2 border-white bg-[#B7F34A]" />
       </span>
       <span className="pointer-events-none absolute right-[calc(100%+0.75rem)] whitespace-nowrap rounded-full bg-foreground px-3.5 py-2 text-xs font-semibold text-background opacity-0 shadow-lg transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100 group-focus-visible:translate-x-0.5 group-focus-visible:opacity-100">
-        {hasWhatsAppNumber() ? "Chat on WhatsApp" : "WhatsApp number not configured"}
+        {hasWhatsAppNumber()
+          ? "Chat on WhatsApp"
+          : "WhatsApp number not configured"}
       </span>
     </a>
   );

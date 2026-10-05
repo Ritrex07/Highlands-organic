@@ -30,8 +30,8 @@ function PrivacyPage() {
             Your privacy matters to us.
           </h1>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-            Effective date: 25 September 2026. This notice explains how
-            Tanzania Highland Organic Co. Ltd uses information when you visit this
+            Effective date: 25 September 2026. This notice explains how Tanzania
+            Highland Organic Co. Ltd uses information when you visit this
             website.
           </p>
 

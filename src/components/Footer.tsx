@@ -13,7 +13,7 @@ const footerLinks = {
     { label: "Avocados", href: "/products#avocados" },
     { label: "Honey", href: "/products#honey" },
     { label: "Chillies", href: "/products#chillies" },
-    { label: "Order Products", href: "/products#order" },
+    { label: "Order Products", href: "/products#all" },
   ],
   Explore: [
     { label: "Our Approach", href: "/our-approach" },
@@ -45,8 +45,9 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-primary-foreground/70">
-              Avocados, honey and chillies from Tanzania&rsquo;s highlands — growing
-              with us alongside smallholder farmers, and exported worldwide.
+              Quality agricultural products from Tanzania, grown with
+              smallholder farmers and prepared for local and international
+              markets.
             </p>
           </div>
 
@@ -73,8 +74,8 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-primary-foreground/15 pt-8 sm:flex-row">
           <p className="text-xs text-primary-foreground/60">
-            &copy; {new Date().getFullYear()} Tanzania Highland Organic Co. Ltd. All
-            rights reserved.
+            &copy; {new Date().getFullYear()} Tanzania Highland Organic Co. Ltd.
+            All rights reserved.
           </p>
           <a
             href="/privacy"

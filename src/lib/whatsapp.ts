@@ -1,7 +1,7 @@
 const DEFAULT_HOC_WHATSAPP_NUMBER = "255754536107";
 
 export const HOC_WHATSAPP_NUMBER = (
-  import.meta.env.VITE_WHATSAPP_NUMBER || DEFAULT_HOC_WHATSAPP_NUMBER
+  import.meta.env["VITE_WHATSAPP_NUMBER"] || DEFAULT_HOC_WHATSAPP_NUMBER
 ).replace(/\D/g, "");
 
 export function whatsappHref(message: string) {

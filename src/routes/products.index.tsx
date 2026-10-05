@@ -17,19 +17,21 @@ export const Route = createFileRoute("/products/")({
   head: () => ({
     meta: [
       {
-        title:
-          "Our Products — Organic Avocados, Honey & Chillies | Tanzania Highland Organic Co. Ltd",
+        title: "Organic Agricultural Products from Tanzania | HOC",
       },
       {
         name: "description",
         content:
-          "Browse Tanzania Highland Organic Co. Ltd products from Tanzania: Hass, Fuerte and Local avocados, honey, and Cayenne chillies.",
+          "Browse organic avocados, forest honey, Cayenne chillies and other export-ready agricultural products from Tanzania.",
       },
-      { property: "og:title", content: "Our Products — Tanzania Highland Organic Co. Ltd" },
+      {
+        property: "og:title",
+        content: "Organic Agricultural Products from Tanzania | HOC",
+      },
       {
         property: "og:description",
         content:
-          "Organic avocados, honey and chillies grown in Tanzania's southern highlands with our partner farmers.",
+          "Quality agricultural products grown with Tanzanian smallholder farmers and prepared for local and international buyers.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -77,9 +79,9 @@ function ProductsPage() {
               Our Products
             </h1>
             <p className="mt-5 max-w-xl animate-fade-up text-base leading-relaxed text-primary-foreground/85 sm:text-lg">
-              Organic avocados, honey and chillies grown across Tanzania's
-              southern highlands with the farmers we work alongside, and
-              prepared for buyers at home and abroad.
+              Organic avocados, forest honey and chillies grown with Tanzanian
+              farmers, handled with care and prepared for buyers at home and
+              abroad.
             </p>
           </div>
         </section>
@@ -128,16 +130,16 @@ function ProductsPage() {
         <CategorySection
           id="avocados"
           eyebrow="Avocados"
-          title="Grown high, picked by hand."
-          text="Hass, Fuerte and local varieties from orchards across the highlands, graded and packed at our own packhouse."
+          title="Reliable fruit from responsible farms."
+          text="Hass, Fuerte and local varieties, carefully harvested, graded and packed for retailers, distributors and food-service buyers."
           category="avocados"
         />
 
         <CategorySection
           id="honey"
           eyebrow="Honey"
-          title="Straight from the forest hives."
-          text="Organic honey harvested in the southern highlands and handled with minimal processing."
+          title="Natural character, carefully handled."
+          text="Forest honey harvested through responsible beekeeping and handled with minimal processing to preserve its natural character."
           category="honey"
           tone="honey"
         />
@@ -145,8 +147,8 @@ function ProductsPage() {
         <CategorySection
           id="chillies"
           eyebrow="Chillies"
-          title="Cayenne, grown to specification."
-          text="Our Cayenne chillies are grown to the specification agreed with the buyer."
+          title="Fresh and flexible for your market."
+          text="Cayenne chillies grown to agreed buyer specifications for fresh produce, processing and food-service applications."
           category="chillies"
         />
 

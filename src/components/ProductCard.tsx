@@ -1,7 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
-import { formatProductPrice, getProductPricing, type Product } from "@/lib/products";
+import {
+  formatProductPrice,
+  getProductPricing,
+  type Product,
+} from "@/lib/products";
 
 export function ProductCard({ product }: { product: Product }) {
   const pricing = getProductPricing(product.slug);

@@ -31,24 +31,44 @@ export function QuoteForm({ productName = "" }: QuoteFormProps) {
           <input className={inputClass} name="name" required />
         </label>
         <label className="text-sm font-semibold text-foreground">
-          Company <span className="font-normal text-muted-foreground">(optional)</span>
+          Company{" "}
+          <span className="font-normal text-muted-foreground">(optional)</span>
           <input className={inputClass} name="company" />
         </label>
         <label className="text-sm font-semibold text-foreground">
           Product *
-          <input className={inputClass} name="product" defaultValue={productName} required />
+          <input
+            className={inputClass}
+            name="product"
+            defaultValue={productName}
+            required
+          />
         </label>
         <label className="text-sm font-semibold text-foreground">
           Quantity *
-          <input className={inputClass} name="quantity" placeholder="e.g. 100 kg" required />
+          <input
+            className={inputClass}
+            name="quantity"
+            placeholder="e.g. 100 kg"
+            required
+          />
         </label>
         <label className="text-sm font-semibold text-foreground sm:col-span-2">
           Destination *
-          <input className={inputClass} name="destination" placeholder="Country, city or delivery point" required />
+          <input
+            className={inputClass}
+            name="destination"
+            placeholder="Country, city or delivery point"
+            required
+          />
         </label>
         <label className="text-sm font-semibold text-foreground sm:col-span-2">
           Message
-          <textarea className={`${inputClass} min-h-28 resize-y`} name="message" placeholder="Tell us about your requirements" />
+          <textarea
+            className={`${inputClass} min-h-28 resize-y`}
+            name="message"
+            placeholder="Tell us about your requirements"
+          />
         </label>
       </div>
       <div className="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
@@ -62,7 +82,8 @@ export function QuoteForm({ productName = "" }: QuoteFormProps) {
         </button>
         {!hasWhatsAppNumber() && (
           <p className="text-xs text-muted-foreground">
-            WhatsApp is not configured yet. Set VITE_WHATSAPP_NUMBER to enable this button.
+            WhatsApp is not configured yet. Set VITE_WHATSAPP_NUMBER to enable
+            this button.
           </p>
         )}
       </div>

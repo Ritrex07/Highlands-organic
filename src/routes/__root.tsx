@@ -13,6 +13,26 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { logoUrl } from "../lib/assets";
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Tanzania Highland Organic Co. Ltd",
+  description:
+    "Tanzanian agribusiness supplying organic fresh produce through responsible farmer partnerships.",
+  email: "highlandsorganic@gmail.com",
+  telephone: "+255754341236",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Njombe",
+    addressCountry: "TZ",
+  },
+  areaServed: ["Tanzania", "International markets"],
+  sameAs: [
+    "https://www.instagram.com/highlands.organic",
+    "https://www.youtube.com/@TANZANIAHIGHLANDSORGANICTV",
+  ],
+};
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -86,14 +106,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         {
           name: "description",
           content:
-            "Avocados, honey and chillies from Tanzania's highlands — grown on our farms and by partner farmers, and exported worldwide.",
+            "Tanzania agribusiness supplying organic fresh produce, responsible sourcing and export-ready agricultural products through trusted farmer partnerships.",
         },
         { name: "author", content: "Tanzania Highland Organic Co. Ltd" },
         { property: "og:title", content: "Tanzania Highland Organic Co. Ltd" },
         {
           property: "og:description",
           content:
-            "Avocados, honey and chillies from Tanzania's highlands — grown on our farms and by partner farmers, and exported worldwide.",
+            "Tanzania agribusiness supplying organic fresh produce, responsible sourcing and export-ready agricultural products through trusted farmer partnerships.",
         },
         { property: "og:type", content: "website" },
         { name: "twitter:card", content: "summary_large_image" },
@@ -129,6 +149,12 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
       </head>
       <body>
         {children}

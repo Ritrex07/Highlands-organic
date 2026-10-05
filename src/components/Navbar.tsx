@@ -15,6 +15,12 @@ export function Navbar() {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const isCurrent = (href: string) => location.pathname === href;
+  const desktopLinkClass = (href: string) =>
+    `rounded-full px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:bg-accent focus-visible:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${isCurrent(href) ? "bg-accent text-accent-foreground" : "text-primary-foreground/80"}`;
+  const mobileLinkClass = (href: string) =>
+    `block w-full rounded-lg px-3 py-3 text-left text-sm font-semibold transition-colors hover:bg-accent hover:text-accent-foreground active:bg-accent active:text-accent-foreground focus-visible:bg-accent focus-visible:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${isCurrent(href) ? "bg-accent text-accent-foreground" : "text-foreground"}`;
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 lg:px-8">
       <div className="mx-auto max-w-7xl rounded-full border border-primary-foreground/10 bg-primary/95 text-primary-foreground shadow-lg shadow-primary/10 backdrop-blur-md">
@@ -40,13 +46,15 @@ export function Navbar() {
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
             <a
               href="/about"
-              className="rounded-full px-4 py-2 text-sm font-medium text-primary-foreground/80 transition-all hover:bg-accent hover:text-accent-foreground hover:shadow-md focus-visible:bg-accent focus-visible:text-accent-foreground"
+              aria-current={isCurrent("/about") ? "page" : undefined}
+              className={desktopLinkClass("/about")}
             >
               About
             </a>
             <a
               href="/products"
-              className="rounded-full px-4 py-2 text-sm font-medium text-primary-foreground/80 transition-all hover:bg-accent hover:text-accent-foreground hover:shadow-md focus-visible:bg-accent focus-visible:text-accent-foreground"
+              aria-current={isCurrent("/products") ? "page" : undefined}
+              className={desktopLinkClass("/products")}
             >
               Products
             </a>
@@ -58,7 +66,7 @@ export function Navbar() {
                 aria-current={
                   location.pathname === link.href ? "page" : undefined
                 }
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground ${location.pathname === link.href ? "bg-primary-foreground/15 text-primary-foreground" : "text-primary-foreground/80"}`}
+                className={desktopLinkClass(link.href)}
               >
                 {link.label}
               </a>
@@ -92,14 +100,16 @@ export function Navbar() {
           >
             <a
               href="/about"
-              className="block w-full rounded-lg px-3 py-3 text-left text-sm font-semibold text-foreground"
+              aria-current={isCurrent("/about") ? "page" : undefined}
+              className={mobileLinkClass("/about")}
               onClick={() => setMobileOpen(false)}
             >
               About
             </a>
             <a
               href="/products"
-              className="block w-full rounded-lg px-3 py-3 text-left text-sm font-semibold text-foreground"
+              aria-current={isCurrent("/products") ? "page" : undefined}
+              className={mobileLinkClass("/products")}
               onClick={() => setMobileOpen(false)}
             >
               Products
@@ -111,13 +121,12 @@ export function Navbar() {
                 aria-current={
                   location.pathname === link.href ? "page" : undefined
                 }
-                className={`block rounded-lg px-3 py-3 text-sm font-semibold transition-colors hover:bg-secondary ${location.pathname === link.href ? "bg-secondary text-foreground" : "text-foreground"}`}
+                className={mobileLinkClass(link.href)}
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
               </a>
             ))}
-
           </nav>
         </div>
       )}

@@ -10,11 +10,11 @@ import avocadoHarvest from "@/assets/site-images/IMG-20260911-WA0010.jpg";
 import packhouse from "@/assets/site-images/page2-image-2.png";
 import fieldHillside from "@/assets/site-images/page2-image-3.png";
 import avocados from "@/assets/site-images/page5-image-4.png";
-import honey from "@/assets/site-images/page5-image-5.png";
-import chillies from "@/assets/site-images/page6-image-6.png";
+import honey from "@/assets/site-images/page6-image-6.png";
+import chillies from "@/assets/site-images/page7-image-9.png";
 import avocadoTreeLegacy from "@/assets/site-images/page6-image-7.png";
 import exportPallets from "@/assets/site-images/page6-image-8.png";
-import honeyBucket from "@/assets/site-images/page7-image-9.png";
+import honeyBucket from "@/assets/site-images/page6-image-6.png";
 import chilliField from "@/assets/site-images/page7-image-10.png";
 
 export const siteImages = {

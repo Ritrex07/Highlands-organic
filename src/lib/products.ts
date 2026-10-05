@@ -51,9 +51,9 @@ export const products: Product[] = [
     categoryLabel: "Avocados",
     variety: "Hass variety",
     short:
-      "Our flagship export avocado, grown organically at highland altitude.",
+      "Our flagship export avocado, grown organically and prepared for dependable supply.",
     detail:
-      "Hass avocados are grown in our farms and partner farmers across Tanzania's southern highlands and prepared at the HOC packhouse. Fruit is sorted and packed with care so it arrives in the condition our buyers expect.",
+      "Hass avocados are grown on our farms and with partner farmers across Tanzania, then prepared at the HOC packhouse. Fruit is sorted and packed with care so it arrives in the condition our buyers expect.",
     availability: "Available — contact us for current availability.",
     image: hassAvocadoImage,
     alt: "Freshly harvested Hass avocados in a crate at the HOC packhouse",
@@ -62,13 +62,22 @@ export const products: Product[] = [
         src: hassAvocadoImage,
         alt: "Harvested Hass avocados in a crate",
       },
-      { src: siteImages.avocadoTreeLegacy, alt: "Avocados ripening on the tree" },
+      {
+        src: siteImages.avocadoTreeLegacy,
+        alt: "Avocados ripening on the tree",
+      },
       {
         src: siteImages.exportPallets,
         alt: "Branded HOC avocado boxes ready for export",
       },
-      { src: newImages.avocadoTree, alt: "Avocados growing on a partner farm tree" },
-      { src: newImages.avocadoHarvest, alt: "Freshly harvested avocados in yellow field crates" },
+      {
+        src: newImages.avocadoTree,
+        alt: "Avocados growing on a partner farm tree",
+      },
+      {
+        src: newImages.avocadoHarvest,
+        alt: "Freshly harvested avocados in yellow field crates",
+      },
     ],
     quantity: true,
   },
@@ -90,7 +99,10 @@ export const products: Product[] = [
         alt: "Fuerte avocados on the tree",
       },
       { src: siteImages.avocados, alt: "Graded avocados at the packhouse" },
-      { src: newImages.farmerTeam, alt: "HOC farmers and partners in an avocado orchard" },
+      {
+        src: newImages.farmerTeam,
+        alt: "HOC farmers and partners in an avocado orchard",
+      },
     ],
     quantity: true,
   },
@@ -124,9 +136,10 @@ export const products: Product[] = [
     category: "honey",
     categoryLabel: "Honey",
     variety: "Organic honey",
-    short: "Pure honey from the forests of the southern highlands.",
+    short:
+      "Pure forest honey, harvested through responsible beekeeping in Tanzania.",
     detail:
-      "Our honey is harvested in our farms and handled with minimal processing so the natural character of the honey is kept intact.",
+      "Our honey is harvested through responsible beekeeping and handled with minimal processing so its natural character is kept intact.",
     availability: "Available — contact us for current availability.",
     image: organicHoneyImage,
     alt: "Golden HOC organic honey poured into a glass jar",
@@ -136,8 +149,14 @@ export const products: Product[] = [
         alt: "Organic honey in a glass jar",
       },
       { src: siteImages.honeyBucket, alt: "A bucket of HOC honey from Njombe" },
-      { src: newImages.honeyBuckets, alt: "HOC honey buckets prepared for market" },
-      { src: newImages.stinglessBeeHoney, alt: "HOC Stingless Bee Honey container" },
+      {
+        src: newImages.honeyBuckets,
+        alt: "HOC honey buckets prepared for market",
+      },
+      {
+        src: newImages.stinglessBeeHoney,
+        alt: "HOC Stingless Bee Honey container",
+      },
     ],
     quantity: true,
   },
@@ -156,7 +175,10 @@ export const products: Product[] = [
     gallery: [
       { src: cayenneImage, alt: "Fresh Cayenne peppers at a market" },
       { src: siteImages.chilliField, alt: "Cayenne pepper field" },
-      { src: newImages.chilliSauce, alt: "Tanzania Highland Organic Co. Ltd chilli sauce bottles" },
+      {
+        src: newImages.chilliSauce,
+        alt: "Tanzania Highland Organic Co. Ltd chilli sauce bottles",
+      },
     ],
     quantity: true,
   },
