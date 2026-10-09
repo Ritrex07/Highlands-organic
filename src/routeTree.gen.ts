@@ -15,8 +15,6 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ExportRouteImport } from './routes/export'
 import { Route as OurApproachRouteImport } from './routes/our-approach'
 import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
 
@@ -50,16 +48,6 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
-  id: '/robots.txt',
-  path: '/robots.txt',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ProductsIndexRoute = ProductsIndexRouteImport.update({
   id: '/products/',
   path: '/products/',
@@ -78,8 +66,6 @@ export interface FileRoutesByFullPath {
   '/export': typeof ExportRoute
   '/our-approach': typeof OurApproachRoute
   '/privacy': typeof PrivacyRoute
-  '/robots.txt': typeof RobotsDottxtRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products/': typeof ProductsIndexRoute
 }
@@ -90,8 +76,6 @@ export interface FileRoutesByTo {
   '/export': typeof ExportRoute
   '/our-approach': typeof OurApproachRoute
   '/privacy': typeof PrivacyRoute
-  '/robots.txt': typeof RobotsDottxtRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products': typeof ProductsIndexRoute
 }
@@ -103,8 +87,6 @@ export interface FileRoutesById {
   '/export': typeof ExportRoute
   '/our-approach': typeof OurApproachRoute
   '/privacy': typeof PrivacyRoute
-  '/robots.txt': typeof RobotsDottxtRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products/': typeof ProductsIndexRoute
 }
@@ -117,8 +99,6 @@ export interface FileRouteTypes {
     | '/export'
     | '/our-approach'
     | '/privacy'
-    | '/robots.txt'
-    | '/sitemap.xml'
     | '/products/$slug'
     | '/products/'
   fileRoutesByTo: FileRoutesByTo
@@ -129,8 +109,6 @@ export interface FileRouteTypes {
     | '/export'
     | '/our-approach'
     | '/privacy'
-    | '/robots.txt'
-    | '/sitemap.xml'
     | '/products/$slug'
     | '/products'
   id:
@@ -141,8 +119,6 @@ export interface FileRouteTypes {
     | '/export'
     | '/our-approach'
     | '/privacy'
-    | '/robots.txt'
-    | '/sitemap.xml'
     | '/products/$slug'
     | '/products/'
   fileRoutesById: FileRoutesById
@@ -154,8 +130,6 @@ export interface RootRouteChildren {
   ExportRoute: typeof ExportRoute
   OurApproachRoute: typeof OurApproachRoute
   PrivacyRoute: typeof PrivacyRoute
-  RobotsDottxtRoute: typeof RobotsDottxtRoute
-  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ProductsSlugRoute: typeof ProductsSlugRoute
   ProductsIndexRoute: typeof ProductsIndexRoute
 }
@@ -204,20 +178,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/robots.txt': {
-      id: '/robots.txt'
-      path: '/robots.txt'
-      fullPath: '/robots.txt'
-      preLoaderRoute: typeof RobotsDottxtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/products/': {
       id: '/products/'
       path: '/products'
@@ -242,8 +202,6 @@ const rootRouteChildren: RootRouteChildren = {
   ExportRoute: ExportRoute,
   OurApproachRoute: OurApproachRoute,
   PrivacyRoute: PrivacyRoute,
-  RobotsDottxtRoute: RobotsDottxtRoute,
-  SitemapDotxmlRoute: SitemapDotxmlRoute,
   ProductsSlugRoute: ProductsSlugRoute,
   ProductsIndexRoute: ProductsIndexRoute,
 }
