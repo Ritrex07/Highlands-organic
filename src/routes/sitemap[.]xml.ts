@@ -17,7 +17,7 @@ const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 </urlset>
 `;
 
-export const Route = createFileRoute("/sitemap")({
+export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: () =>

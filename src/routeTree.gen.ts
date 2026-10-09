@@ -15,8 +15,8 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ExportRouteImport } from './routes/export'
 import { Route as OurApproachRouteImport } from './routes/our-approach'
 import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as RobotsRouteImport } from './routes/robots'
-import { Route as SitemapRouteImport } from './routes/sitemap'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
 
@@ -50,14 +50,14 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RobotsRoute = RobotsRouteImport.update({
-  id: '/robots',
-  path: '/robots',
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SitemapRoute = SitemapRouteImport.update({
-  id: '/sitemap',
-  path: '/sitemap',
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProductsIndexRoute = ProductsIndexRouteImport.update({
@@ -78,8 +78,8 @@ export interface FileRoutesByFullPath {
   '/export': typeof ExportRoute
   '/our-approach': typeof OurApproachRoute
   '/privacy': typeof PrivacyRoute
-  '/robots': typeof RobotsRoute
-  '/sitemap': typeof SitemapRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products/': typeof ProductsIndexRoute
 }
@@ -90,8 +90,8 @@ export interface FileRoutesByTo {
   '/export': typeof ExportRoute
   '/our-approach': typeof OurApproachRoute
   '/privacy': typeof PrivacyRoute
-  '/robots': typeof RobotsRoute
-  '/sitemap': typeof SitemapRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products': typeof ProductsIndexRoute
 }
@@ -103,8 +103,8 @@ export interface FileRoutesById {
   '/export': typeof ExportRoute
   '/our-approach': typeof OurApproachRoute
   '/privacy': typeof PrivacyRoute
-  '/robots': typeof RobotsRoute
-  '/sitemap': typeof SitemapRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products/': typeof ProductsIndexRoute
 }
@@ -117,8 +117,8 @@ export interface FileRouteTypes {
     | '/export'
     | '/our-approach'
     | '/privacy'
-    | '/robots'
-    | '/sitemap'
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/products/$slug'
     | '/products/'
   fileRoutesByTo: FileRoutesByTo
@@ -129,8 +129,8 @@ export interface FileRouteTypes {
     | '/export'
     | '/our-approach'
     | '/privacy'
-    | '/robots'
-    | '/sitemap'
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/products/$slug'
     | '/products'
   id:
@@ -141,8 +141,8 @@ export interface FileRouteTypes {
     | '/export'
     | '/our-approach'
     | '/privacy'
-    | '/robots'
-    | '/sitemap'
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/products/$slug'
     | '/products/'
   fileRoutesById: FileRoutesById
@@ -154,8 +154,8 @@ export interface RootRouteChildren {
   ExportRoute: typeof ExportRoute
   OurApproachRoute: typeof OurApproachRoute
   PrivacyRoute: typeof PrivacyRoute
-  RobotsRoute: typeof RobotsRoute
-  SitemapRoute: typeof SitemapRoute
+  RobotsDottxtRoute: typeof RobotsDottxtRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ProductsSlugRoute: typeof ProductsSlugRoute
   ProductsIndexRoute: typeof ProductsIndexRoute
 }
@@ -204,18 +204,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/robots': {
-      id: '/robots'
-      path: '/robots'
-      fullPath: '/robots'
-      preLoaderRoute: typeof RobotsRouteImport
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/sitemap': {
-      id: '/sitemap'
-      path: '/sitemap'
-      fullPath: '/sitemap'
-      preLoaderRoute: typeof SitemapRouteImport
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/products/': {
@@ -242,8 +242,8 @@ const rootRouteChildren: RootRouteChildren = {
   ExportRoute: ExportRoute,
   OurApproachRoute: OurApproachRoute,
   PrivacyRoute: PrivacyRoute,
-  RobotsRoute: RobotsRoute,
-  SitemapRoute: SitemapRoute,
+  RobotsDottxtRoute: RobotsDottxtRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   ProductsSlugRoute: ProductsSlugRoute,
   ProductsIndexRoute: ProductsIndexRoute,
 }

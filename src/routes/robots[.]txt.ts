@@ -6,7 +6,7 @@ Allow: /
 Sitemap: https://tanzaniahighlandorganic.co.tz/sitemap.xml
 `;
 
-export const Route = createFileRoute("/robots")({
+export const Route = createFileRoute("/robots.txt")({
   server: {
     handlers: {
       GET: () =>
