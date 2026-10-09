@@ -15,6 +15,8 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ExportRouteImport } from './routes/export'
 import { Route as OurApproachRouteImport } from './routes/our-approach'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as RobotsRouteImport } from './routes/robots'
+import { Route as SitemapRouteImport } from './routes/sitemap'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
 
@@ -48,6 +50,16 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RobotsRoute = RobotsRouteImport.update({
+  id: '/robots',
+  path: '/robots',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapRoute = SitemapRouteImport.update({
+  id: '/sitemap',
+  path: '/sitemap',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductsIndexRoute = ProductsIndexRouteImport.update({
   id: '/products/',
   path: '/products/',
@@ -66,6 +78,8 @@ export interface FileRoutesByFullPath {
   '/export': typeof ExportRoute
   '/our-approach': typeof OurApproachRoute
   '/privacy': typeof PrivacyRoute
+  '/robots': typeof RobotsRoute
+  '/sitemap': typeof SitemapRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products/': typeof ProductsIndexRoute
 }
@@ -76,6 +90,8 @@ export interface FileRoutesByTo {
   '/export': typeof ExportRoute
   '/our-approach': typeof OurApproachRoute
   '/privacy': typeof PrivacyRoute
+  '/robots': typeof RobotsRoute
+  '/sitemap': typeof SitemapRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products': typeof ProductsIndexRoute
 }
@@ -87,6 +103,8 @@ export interface FileRoutesById {
   '/export': typeof ExportRoute
   '/our-approach': typeof OurApproachRoute
   '/privacy': typeof PrivacyRoute
+  '/robots': typeof RobotsRoute
+  '/sitemap': typeof SitemapRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products/': typeof ProductsIndexRoute
 }
@@ -99,6 +117,8 @@ export interface FileRouteTypes {
     | '/export'
     | '/our-approach'
     | '/privacy'
+    | '/robots'
+    | '/sitemap'
     | '/products/$slug'
     | '/products/'
   fileRoutesByTo: FileRoutesByTo
@@ -109,6 +129,8 @@ export interface FileRouteTypes {
     | '/export'
     | '/our-approach'
     | '/privacy'
+    | '/robots'
+    | '/sitemap'
     | '/products/$slug'
     | '/products'
   id:
@@ -119,6 +141,8 @@ export interface FileRouteTypes {
     | '/export'
     | '/our-approach'
     | '/privacy'
+    | '/robots'
+    | '/sitemap'
     | '/products/$slug'
     | '/products/'
   fileRoutesById: FileRoutesById
@@ -130,6 +154,8 @@ export interface RootRouteChildren {
   ExportRoute: typeof ExportRoute
   OurApproachRoute: typeof OurApproachRoute
   PrivacyRoute: typeof PrivacyRoute
+  RobotsRoute: typeof RobotsRoute
+  SitemapRoute: typeof SitemapRoute
   ProductsSlugRoute: typeof ProductsSlugRoute
   ProductsIndexRoute: typeof ProductsIndexRoute
 }
@@ -178,6 +204,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/robots': {
+      id: '/robots'
+      path: '/robots'
+      fullPath: '/robots'
+      preLoaderRoute: typeof RobotsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap': {
+      id: '/sitemap'
+      path: '/sitemap'
+      fullPath: '/sitemap'
+      preLoaderRoute: typeof SitemapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/products/': {
       id: '/products/'
       path: '/products'
@@ -202,6 +242,8 @@ const rootRouteChildren: RootRouteChildren = {
   ExportRoute: ExportRoute,
   OurApproachRoute: OurApproachRoute,
   PrivacyRoute: PrivacyRoute,
+  RobotsRoute: RobotsRoute,
+  SitemapRoute: SitemapRoute,
   ProductsSlugRoute: ProductsSlugRoute,
   ProductsIndexRoute: ProductsIndexRoute,
 }
