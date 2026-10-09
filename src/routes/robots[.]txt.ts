@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 const robotsTxt = `User-agent: *
 Allow: /
+Allow: /sitemap.xml
 
 Sitemap: https://www.tanzaniahighlandorganic.co.tz/sitemap.xml
 `;
