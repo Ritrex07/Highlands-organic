@@ -13,6 +13,9 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { logoUrl } from "../lib/assets";
 
+const siteUrl = "https://tanzaniahighlandorganic.co.tz";
+const googleSiteVerification = import.meta.env.VITE_GOOGLE_SITE_VERIFICATION;
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -109,6 +112,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "Tanzania agribusiness supplying organic fresh produce, responsible sourcing and export-ready agricultural products through trusted farmer partnerships.",
         },
         { name: "author", content: "Tanzania Highland Organic Co. Ltd" },
+        { name: "theme-color", content: "#173f2a" },
+        ...(googleSiteVerification
+          ? [
+              {
+                name: "google-site-verification",
+                content: googleSiteVerification,
+              },
+            ]
+          : []),
         { property: "og:title", content: "Tanzania Highland Organic Co. Ltd" },
         {
           property: "og:description",
@@ -116,6 +128,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "Tanzania agribusiness supplying organic fresh produce, responsible sourcing and export-ready agricultural products through trusted farmer partnerships.",
         },
         { property: "og:type", content: "website" },
+        { property: "og:url", content: siteUrl },
         { name: "twitter:card", content: "summary_large_image" },
       ],
       links: [
@@ -125,6 +138,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         },
         { rel: "icon", href: logoUrl, type: "image/png", sizes: "96x96" },
         { rel: "apple-touch-icon", href: logoUrl },
+        { rel: "manifest", href: "/favicon/site.webmanifest" },
+        { rel: "canonical", href: siteUrl },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         {
           rel: "preconnect",
