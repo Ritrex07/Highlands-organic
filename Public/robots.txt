@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tanzaniahighlandorganic.co.tz/sitemap.xml
+Sitemap: https://www.tanzaniahighlandorganic.co.tz/sitemap.xml

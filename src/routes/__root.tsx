@@ -13,7 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { logoUrl } from "../lib/assets";
 
-const siteUrl = "https://tanzaniahighlandorganic.co.tz";
+const siteUrl = "https://www.tanzaniahighlandorganic.co.tz";
 const googleSiteVerification = import.meta.env.VITE_GOOGLE_SITE_VERIFICATION;
 
 const organizationSchema = {

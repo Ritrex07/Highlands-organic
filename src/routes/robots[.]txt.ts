@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 const robotsTxt = `User-agent: *
 Allow: /
 
-Sitemap: https://tanzaniahighlandorganic.co.tz/sitemap.xml
+Sitemap: https://www.tanzaniahighlandorganic.co.tz/sitemap.xml
 `;
 
 export const Route = createFileRoute("/robots.txt")({
